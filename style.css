@@ -1,0 +1,119 @@
+.myBody {
+    /* cursor: url("src/images/"), auto; */
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    background-color: black;
+    background-image: url("src/images/background_image_1920x1080_01.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.div01 {
+    position: relative;
+    width: 1000px;
+    height: 350px;    
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.image01 {
+    width: 1000px;
+    height: 270px;
+    position: absolute;
+    z-index: 0;
+}
+
+.image02 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 140px;
+    left: 400px;
+    z-index: 1;
+}
+
+.divMyName {
+    position: relative;
+    width: 1000px;
+    height: 120px;
+    text-align: center;
+    font-size: 25px;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.divIcons {
+    position: relative;
+    width: 1000px;
+    height: 95px;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.githubIcon, .linkedinIcon, .instagramIcon {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    transition: transform .2s;
+}
+
+.githubIconText, .linkedinIconText, .instagramIconText {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 125%;
+    opacity: 0;
+    transition: .5s ease;
+    margin: auto;
+}
+
+.githubIconContainer, .linkedinIconContainer, .instagramIconContainer {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.githubIconContainer:hover .githubIconText, .linkedinIconContainer:hover .linkedinIconText, .instagramIconContainer:hover .instagramIconText {
+    opacity: 1;
+}
+
+.githubIcon:hover, .linkedinIcon:hover, .instagramIcon:hover {
+    -ms-transform: scale(1.25); /* IE 9 */
+    -webkit-transform: scale(1.25); /* Safari 3-8 */
+    transform: scale(1.25); 
+}
+
+.githubIcon {
+    left: 400px;
+}
+
+.linkedinIcon {
+    left: 475px;
+}
+
+.instagramIcon {
+    left: 550px;
+}
+
+.githubIconText {
+    left: 405px;
+}
+
+.linkedinIconText {
+    left: 477px;
+}
+
+.instagramIconText {
+    left: 550px;
+}
+
+.divBriefDescription {
+    position: relative;
+    width: 1000px;
+    height: 250px;
+    text-align: center;
+    margin: auto;
+    /* border: 1px solid black; */
+}
