@@ -4,6 +4,7 @@
     color: white;
     background-color: black;
     background-image: url("src/images/background_image_1920x1080_01.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -14,12 +15,14 @@
     width: 1000px;
     height: 350px;    
     margin: auto;
-    /* border: 1px solid black; */
+    border: 1px solid white;
 }
 
 .image01 {
     width: 1000px;
     height: 270px;
+    max-width:100%;
+    max-height:100%;
     position: absolute;
     z-index: 0;
 }
@@ -40,7 +43,7 @@
     text-align: center;
     font-size: 25px;
     margin: auto;
-    /* border: 1px solid black; */
+    border: 1px solid white;
 }
 
 .divIcons {
@@ -48,7 +51,7 @@
     width: 1000px;
     height: 95px;
     margin: auto;
-    /* border: 1px solid black; */
+    border: 1px solid white;
 }
 
 .githubIcon, .linkedinIcon, .instagramIcon {
@@ -73,6 +76,19 @@
     width: 50px;
     height: 50px;
     position: absolute;
+    border: 1px solid white;
+}
+
+.githubIconContainer {
+    left: 400px;
+}
+
+.linkedinIconContainer {
+    left: 475px;
+}
+
+.instagramIconContainer {
+    left: 550px;
 }
 
 .githubIconContainer:hover .githubIconText, .linkedinIconContainer:hover .linkedinIconText, .instagramIconContainer:hover .instagramIconText {
@@ -85,28 +101,16 @@
     transform: scale(1.25); 
 }
 
-.githubIcon {
-    left: 400px;
-}
-
-.linkedinIcon {
-    left: 475px;
-}
-
-.instagramIcon {
-    left: 550px;
-}
-
 .githubIconText {
-    left: 405px;
+    left: 5px;
 }
 
 .linkedinIconText {
-    left: 477px;
+    left: 2px;
 }
 
 .instagramIconText {
-    left: 550px;
+    left: 0px;
 }
 
 .divBriefDescription {
