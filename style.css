@@ -12,34 +12,35 @@
 
 .div01 {
     position: relative;
-    width: 1000px;
-    height: 350px;    
+    max-width:1000px;
+    max-height:350px;
     margin: auto;
     /* border: 1px solid white; */
 }
 
-.image01 {
+.bannerImage {
     width: 1000px;
     height: 270px;
     max-width:100%;
     max-height:100%;
     position: absolute;
+    opacity: 1;
     z-index: 0;
 }
 
-.image02 {
+.portraitImage {
     width: 200px;
     height: 200px;
     position: absolute;
-    top: 140px;
-    left: 400px;
+    top: 40%;
+    left: calc(50% - 100px);
     z-index: 1;
 }
 
 .divMyName {
     position: relative;
-    width: 1000px;
     height: 120px;
+    max-width:1000px;
     text-align: center;
     font-size: 25px;
     margin: auto;
@@ -48,8 +49,8 @@
 
 .divIcons {
     position: relative;
-    width: 1000px;
     height: 95px;
+    max-width: 1000px;
     margin: auto;
     /* border: 1px solid white; */
 }
@@ -80,15 +81,15 @@
 }
 
 .githubIconContainer {
-    left: 400px;
+    left: calc(33% - 25px);
 }
 
 .linkedinIconContainer {
-    left: 475px;
+    left: calc(50% - 25px);
 }
 
 .instagramIconContainer {
-    left: 550px;
+    left: calc(66% - 25px);
 }
 
 .githubIconContainer:hover .githubIconText, .linkedinIconContainer:hover .linkedinIconText, .instagramIconContainer:hover .instagramIconText {
@@ -115,8 +116,8 @@
 
 .divBriefDescription {
     position: relative;
-    width: 1000px;
     height: 250px;
+    max-width: 1000px;
     text-align: center;
     margin: auto;
     /* border: 1px solid black; */
