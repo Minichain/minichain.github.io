@@ -48,7 +48,7 @@
     /* border: 1px solid white; */
 }
 
-.divIcons {
+.divSocialMedia {
     position: relative;
     width: 1000px;
     height: 95px;
@@ -57,7 +57,7 @@
     /* border: 1px solid white; */
 }
 
-.githubIcon, .linkedinIcon, .instagramIcon, .twitterIcon {
+.githubIcon, .linkedinIcon, .instagramIcon, .twitterIcon, .myCurriculumVitaeIcon {
     width: 50px;
     height: 50px;
     margin: auto;
@@ -65,7 +65,7 @@
     transition: transform .2s;
 }
 
-.githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText {
+.githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText, .myCurriculumVitaeIconText {
     color: white;
     font-size: 15px;
     position: absolute;
@@ -75,7 +75,7 @@
     margin: auto;
 }
 
-.githubIconContainer, .linkedinIconContainer, .instagramIconContainer, .twitterIconContainer {
+.githubIconContainer, .linkedinIconContainer, .instagramIconContainer, .twitterIconContainer, .myCurriculumVitaeIconContainer {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -98,14 +98,20 @@
     left: calc(80% - 25px);
 }
 
+.myCurriculumVitaeIconContainer {
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+
 .githubIconContainer:hover .githubIconText, 
 .linkedinIconContainer:hover .linkedinIconText, 
 .instagramIconContainer:hover .instagramIconText, 
-.twitterIconContainer:hover .twitterIconText {
+.twitterIconContainer:hover .twitterIconText,
+.myCurriculumVitaeIconContainer:hover .myCurriculumVitaeIconText {
     opacity: 1;
 }
 
-.githubIcon:hover, .linkedinIcon:hover, .instagramIcon:hover, .twitterIcon:hover {
+.githubIcon:hover, .linkedinIcon:hover, .instagramIcon:hover, .twitterIcon:hover, .myCurriculumVitaeIcon:hover {
     -ms-transform: scale(1.25); /* IE 9 */
     -webkit-transform: scale(1.25); /* Safari 3-8 */
     transform: scale(1.25); 
@@ -127,14 +133,26 @@
     left: 12%;
 }
 
+.myCurriculumVitaeIconText {
+    left: 15%;
+}
+
 .divBriefDescription {
     position: relative;
     width: 1000px;
-    height: 250px;
     max-width: 1000px;
     text-align: center;
     margin: auto;
     /* border: 1px solid black; */
+}
+
+.divMoreInfoIcons {
+    position: relative;
+    width: 1000px;
+    height: 120px;
+    max-width: 1000px;
+    margin: auto;
+    /* border: 1px solid white; */
 }
 
 @media (max-width:1024px) {
@@ -151,7 +169,7 @@
         height: 275px;
     }
 
-    .divMyName, .divIcons, .divBriefDescription {
+    .divMyName, .divSocialMedia, .divBriefDescription, .divMoreInfoIcons {
         width: 100%;
     }
 }
