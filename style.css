@@ -3,7 +3,7 @@
     font-family: 'Oswald', sans-serif;
     color: white;
     background-color: black;
-    background-image: url("src/images/background_image_1920x1080_01.png");
+    background-image: url("res/images/background_image_1920x1080_01.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
