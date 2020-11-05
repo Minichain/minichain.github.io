@@ -10,29 +10,19 @@
     background-position: center;
 }
 
-.div01 {
+.divTop {
     position: relative;
-    height: 350px;
-    max-width:1000px;
-    max-height:350px;
+    width: 1000px;
+    height: 100px;
+    max-width: 1000px;
     margin: auto;
     /* border: 1px solid white; */
-}
-
-.bannerImage {
-    width: 1000px;
-    height: 270px;
-    max-width:100%;
-    max-height:100%;
-    position: absolute;
-    opacity: 1;
-    z-index: 0;
 }
 
 .divTopIcons {
     position: relative;
     width: 1000px;
-    height: 95px;
+    height: 50px;
     max-width: 1000px;
     margin: auto;
     /* border: 1px solid white; */
@@ -42,18 +32,7 @@
     width: 50px;
     height: 50px;
     margin: auto;
-    position: absolute;
     transition: transform .2s;
-}
-
-.backIconText {
-    color: white;
-    font-size: 15px;
-    position: absolute;
-    top: 125%;
-    opacity: 0;
-    transition: .5s ease;
-    margin: auto;
 }
 
 .backIconContainer {
@@ -64,10 +43,10 @@
 }
 
 .backIconContainer {
-    left: calc(20% - 25px);
+    left: calc(0% - 25px);
 }
 
-.backIconContainer:hover .backIconText {
+.backIconContainer:hover {
     opacity: 1;
 }
 
@@ -75,10 +54,6 @@
     -ms-transform: scale(1.25); /* IE 9 */
     -webkit-transform: scale(1.25); /* Safari 3-8 */
     transform: scale(1.25); 
-}
-
-.backIconText {
-    left: 20%;
 }
 
 .divProject01Description, .divProject01Downloads {
@@ -117,7 +92,7 @@
 .divBottomIcons {
     position: relative;
     width: 1000px;
-    height: 120px;
+    height: 50px;
     max-width: 1000px;
     margin: auto;
     margin-top: 5%;

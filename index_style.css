@@ -90,16 +90,16 @@
     left: calc(33.3% - 25px);
 }
 
-.instagramIconContainer {
+.myProjectsIconContainer {
     left: calc(50% - 25px);
 }
 
-.twitterIconContainer {
+.instagramIconContainer {
     left: calc(66.6% - 25px);
 }
 
-.myProjectsIconContainer {
-    left: calc(84.4% - 25px);
+.twitterIconContainer {
+    left: calc(83.4% - 25px);
 }
 
 .myCurriculumVitaeIconContainer {
