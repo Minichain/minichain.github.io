@@ -56,7 +56,7 @@
     transform: scale(1.25); 
 }
 
-.divProject01Description, .divProject01Downloads {
+.divProject01Description, .divProject01Downloads, .divProject01PatchNotes {
     position: relative;
     width: 1000px;
     max-width: 1000px;
@@ -65,7 +65,7 @@
     /* border: 1px solid black; */
 }
 
-.divProject01DescriptionInnerDiv, .divProject01DownloadsInnerDiv {
+.divProject01DescriptionInnerDiv, .divProject01DownloadsInnerDiv, .divProject01PatchNotesInnerDiv {
     position: relative;
     text-align: left;
     margin-left: 10%;
@@ -85,14 +85,6 @@
     /* border: 1px solid black; */
 }
 
-.divProject01InnerDiv {
-    padding-top: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    /* border: 1px solid black; */
-}
-
 .divBottomIcons {
     position: relative;
     width: 1000px;
@@ -104,7 +96,7 @@
 }
 
 @media (max-width:1024px) {
-    .divTopIcons, .divProject01, .divBottomIcons, .divProject01Description, .divProject01Demo, .divProject01Downloads {
+    .divTopIcons, .divProject01, .divBottomIcons, .divProject01Description, .divProject01Demo, .divProject01Downloads, .divProject01PatchNotes {
         width: 100%;
     }
 }
