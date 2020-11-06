@@ -43,7 +43,7 @@
 }
 
 .backIconContainer {
-    left: calc(0% - 25px);
+    left: calc(10% - 25px);
 }
 
 .backIconContainer:hover {
@@ -69,6 +69,10 @@
     position: relative;
     text-align: left;
     margin-left: 10%;
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
     /* border: 1px solid black; */
 }
 
@@ -100,16 +104,7 @@
 }
 
 @media (max-width:1024px) {
-    .bannerImage {
-        opacity: 0;
-    }
-
-    .div01 {
-        width: 100%;
-        height: 275px;
-    }
-
-    .divTopIcons, .divProject01, .divBottomIcons {
+    .divTopIcons, .divProject01, .divBottomIcons, .divProject01Description, .divProject01Demo, .divProject01Downloads {
         width: 100%;
     }
 }
