@@ -56,24 +56,20 @@
     transform: scale(1.25); 
 }
 
-.divProject01Description, .divProject01Downloads, .divProject01PatchNotes {
+.divProject01Description, .divProject01PatchNotes {
     position: relative;
     width: 1000px;
     max-width: 1000px;
     text-align: left;
     margin: auto;
-    /* border: 1px solid black; */
+    /* border: 1px solid white; */
 }
 
-.divProject01DescriptionInnerDiv, .divProject01DownloadsInnerDiv, .divProject01PatchNotesInnerDiv {
+.divProject01DescriptionInnerDiv, .divProject01PatchNotesInnerDiv {
     position: relative;
     text-align: left;
-    margin-left: 10%;
-    padding-top: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    /* border: 1px solid black; */
+    margin-left: 15%;
+    /* border: 1px solid white; */
 }
 
 .divProject01Demo {
@@ -83,6 +79,22 @@
     text-align: center;
     margin: auto;
     /* border: 1px solid black; */
+}
+
+.divProject01Downloads {
+    position: relative;
+    width: 1000px;
+    max-width: 1000px;
+    height: 100px;
+    margin: auto;
+    /* border: 1px solid white; */
+}
+
+.divProject01DownloadsInnerDiv {
+    position: relative;
+    text-align: center;
+    margin-top: 25px;
+    /* border: 1px solid white; */
 }
 
 .divBottomIcons {
@@ -96,7 +108,21 @@
 }
 
 @media (max-width:1024px) {
-    .divTopIcons, .divProject01, .divBottomIcons, .divProject01Description, .divProject01Demo, .divProject01Downloads, .divProject01PatchNotes {
+    .divTop, .divTopIcons, .divProject01, .divBottomIcons, .divProject01Description, .divProject01Demo, .divProject01Downloads, .divProject01PatchNotes {
         width: 100%;
     }
+}
+
+.project01DownloadButton {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+  
+/* Darker background on mouse-over */
+.project01DownloadButton:hover {
+    background-color: RoyalBlue;
 }
