@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="projects_style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="res/images/favicon_01.png" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
     <title>Minichain</title>
@@ -14,123 +13,98 @@
 </head>
 
 <body class="myBody" onload="onLoad()" onresize="onWindowResize()">
-    <script src="src/main.js"></script>
-
     <div class="divTop"></div>
 
-    <div class="divTopIcons">
-        <div class="backIconContainer">
+    <div class="topIcons">
+        <div class="githubIconContainer">
+            <a href="https://github.com/Minichain" target="_blank">
+                <div class="githubIconText">Github</div>
+                <img class="githubIcon" src="res/icons/github_icon_white_100x100.png"></img>
+            </a>
+        </div>
+        <div class="linkedinIconContainer">
+            <a href="https://linkedin.com/in/adria-cadena-rubio" target="_blank">
+                <div class="linkedinIconText">Linkedin</div>
+                <img class="linkedinIcon" src="res/icons/linkedin_icon_white_100x100.png"></img>
+            </a>
+        </div>
+        <div class="homeIconContainer">
             <a href="index.html">
-                <img class="backIcon" src="res/images/back_icon_white_100x100.png"></img>
+                <div class="homeIconText">Home</div>
+                <img class="homeIcon" src="res/icons/home_icon_white_100x100.png"></img>
+            </a>
+        </div>
+        <div class="instagramIconContainer">
+            <a href="https://www.instagram.com/itsminichain/" target="_blank">
+                <div class="instagramIconText">Instagram</div>
+                <img class="instagramIcon" src="res/icons/instagram_icon_white_100x100.png"></img>
+            </a>
+        </div>
+        <div class="twitterIconContainer">
+            <a href="https://twitter.com/ItsMinichain/" target="_blank">
+                <div class="twitterIconText">Twitter</div>
+                <img class="twitterIcon" src="res/icons/twitter_icon_white_100x100.png"></img>
             </a>
         </div>
     </div>
 
-    <div class="divProject01">
+    <div class="projects">
+        <div class="projectsInnerDiv">
+            <div class="project">
+                <div class="projectImage">
+                    <img class="elwynnProjectImage" src="res/images/elwynn_project_image.png">
+                    <a href="elwynn_project.html">
+                        <div class="projectOverlay">
+                            <div class="projectOverlayText">
+                                Elwynn Project
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-        <div class="divProject01Description">
-            <div class="divProject01DescriptionInnerDiv">
-                <h1>Game Engine written in Java.</h1>
-                <p>Tools used in this project:</p>
-                <h2>
-                    <a href="https://www.lwjgl.org/">LWJGL</a> (Lightweight Java Game Library):
-                </h2>
-                <p>
-                    LWJGL is a java library that includes APIs such as OpenGL and OpenAL in order to render graphics and audio in real-time.
-                </p>
-                <h2>
-                    <a href="https://github.com/xerial/sqlite-jdbc">SQLite JDBC:</a>
-                </h2>
-                <p>SQLite JDBC is a library for accessing and creating SQLite database files in Java.</p>
-                <h2>
-                    Assets:
-                </h2>
-                <p>
-                    All the assets (sprites and sounds) have been designed and recorded by me.
-                </p>
-                <h2>
-                    Video Demo:
-                </h2>
+                <div class="projectDescription">
+                    <h1>Elwynn Project</h1>
+                    <p>Game Engine written in Java.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="divProject01Demo">
-            <iframe width="480" height="270" src="https://www.youtube.com/embed/nGwv175yuIk">
-            </iframe>
-        </div>
+            <div class="project">
+                <div class="projectImage">
+                    <img class="minichainsPlayerProjectImage" src="res/images/minichains_player_project.png">
+                    <a href="https://github.com/Minichain/MinichainsPlayer">
+                        <div class="projectOverlay">
+                            <div class="projectOverlayText">
+                                Minichain's Player
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-        <div class="divProject01Downloads">
-            <div class="divProject01DownloadsInnerDiv">
-                <a href="https://drive.google.com/drive/folders/1ouFLMoRi2XZKDLciLRhzkJsJ3ALuE3bf?usp=sharing" target="_blank">
-                    <button class="project01DownloadButton"><i class="fa fa-download"></i> Download</button>
-                </a>
+                <div class="projectDescription">
+                    <h1 style="font-size:x-large;">Minichain's Player</h1>
+                    <p>Android Music Player developed in Kotlin.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="divProject01PatchNotes">
-            <div class="divProject01PatchNotesInnerDiv">
-                <h1>Path Notes</h1>
+            <div class="project">
+                <div class="projectImage">
+                    <img class="eversongProjectImage" src="res/images/eversong_app_project.png">
+                    <a href="https://github.com/Minichain/EversongApp">
+                        <div class="projectOverlay">
+                            <div class="projectOverlayText">
+                                Eversong App
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-                <h2>v0.01.04.0</h2>
-                <ul>
-                    <li>Smoke particles added when running.</li>
-                    <li>Interaction entities are not displayed when menu is showing.</li>
-                </ul>
-                
-                <h2>v0.01.00.0</h2>
-                <ul>
-                    <li>Input/Action Manager refactor (in progress).</li>
-                    <li>After this refactor, the developer should be able to assign any input to any action in the game.</li>
-                </ul>
-
-                <h2>v0.00.08.0</h2>
-                <ul>
-                    <li>You can now interact with some NPCs by pressing "F".</li>
-                </ul>
-
-                <h2>v0.00.07.0</h2>
-                <ul>
-                    <li>Custom Taskbar Icon added.</li>
-                    <li>NPCs added.</li>
-                    <li>You can change HUD visibility by pressing "ALT + Z".</li>
-                    <li>Background music changed.</li>
-                    <li>Logs are stored in AppData, in a file called "log_file.txt".</li>
-                    <li>Database is now stored in AppData.</li>
-                    <li>Menu scroll bar improved.</li>
-                    <li>Number of lights limited to 25.</li>
-                </ul>
-
-                <h2>v0.00.06.0</h2>
-                <ul>
-                    <li>Enemies drop coins.</li>
-                    <li>Coins can be picked up.</li>
-                    <li>More enemies added.</li>
-                    <li>All sprites have been re-skinned!</li>
-                </ul>
-
-                <h2>v0.00.04.0</h2>
-                <ul>
-                    <li>ScrollBar added to the Menu.</li>
-                    <li>You can scroll the menu using the "mouse wheel".</li>
-                    <li>You can now enable/disable shaders from the menu.</li>
-                    <li>Now you can change Game Time speed from the Menu.</li>
-                    <li>You can enable/disable enemies spawn in the Menu.</li>
-                    <li>You can modify ambience sound gain.</li>
-                </ul>
-
+                <div class="projectDescription">
+                    <h1>Eversong App</h1>
+                    <p>Android Musical App with real-time chord recognition.</p>
+                </div>
             </div>
-        </div>
-
-    </div>
-
-    <div class="divBottomIcons">
-        <div class="backIconContainer">
-            <a href="index.html">
-                <img class="backIcon" src="res/images/back_icon_white_100x100.png"></img>
-            </a>
         </div>
     </div>
-
 </body>
 
 </html>

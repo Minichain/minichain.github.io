@@ -10,13 +10,12 @@
     background-position: center;
 }
 
-.div01 {
+.bannerAndPortrait {
     position: relative;
     height: 350px;
     max-width:1000px;
     max-height:350px;
     margin: auto;
-    /* border: 1px solid white; */
 }
 
 .bannerImage {
@@ -38,112 +37,13 @@
     z-index: 1;
 }
 
-.divMyName {
+.myName {
     position: relative;
     height: 150px;
     max-width:1000px;
     text-align: center;
     font-size: 25px;
     margin: auto;
-    /* border: 1px solid white; */
-}
-
-.divSocialMedia {
-    position: relative;
-    width: 1000px;
-    height: 95px;
-    max-width: 1000px;
-    margin: auto;
-    /* border: 1px solid white; */
-}
-
-.githubIcon, .linkedinIcon, .instagramIcon, .twitterIcon, .myCurriculumVitaeIcon, .myProjectsIcon {
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    position: absolute;
-    transition: transform .2s;
-}
-
-.githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText, .myCurriculumVitaeIconText, .myProjectsIconText {
-    color: white;
-    font-size: 15px;
-    position: absolute;
-    top: 125%;
-    opacity: 0;
-    transition: .5s ease;
-    margin: auto;
-}
-
-.githubIconContainer, .linkedinIconContainer, .instagramIconContainer, .twitterIconContainer, .myCurriculumVitaeIconContainer, .myProjectsIconContainer {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    /* border: 1px solid white; */
-}
-
-.githubIconContainer {
-    left: calc(16.6% - 25px);
-}
-
-.linkedinIconContainer {
-    left: calc(33.3% - 25px);
-}
-
-.myProjectsIconContainer {
-    left: calc(50% - 25px);
-}
-
-.instagramIconContainer {
-    left: calc(66.6% - 25px);
-}
-
-.twitterIconContainer {
-    left: calc(83.4% - 25px);
-}
-
-.myCurriculumVitaeIconContainer {
-    top: calc(50% - 25px);
-    left: calc(50% - 25px);
-}
-
-.githubIconContainer:hover .githubIconText, 
-.linkedinIconContainer:hover .linkedinIconText, 
-.instagramIconContainer:hover .instagramIconText, 
-.twitterIconContainer:hover .twitterIconText,
-.myCurriculumVitaeIconContainer:hover .myCurriculumVitaeIconText,
-.myProjectsIconContainer:hover .myProjectsIconText {
-    opacity: 1;
-}
-
-.githubIcon:hover, .linkedinIcon:hover, .instagramIcon:hover, .twitterIcon:hover, .myCurriculumVitaeIcon:hover, .myProjectsIcon:hover {
-    -ms-transform: scale(1.25); /* IE 9 */
-    -webkit-transform: scale(1.25); /* Safari 3-8 */
-    transform: scale(1.25); 
-}
-
-.githubIconText {
-    left: 15%;
-}
-
-.linkedinIconText {
-    left: 7%;
-}
-
-.instagramIconText {
-    left: 0%;
-}
-
-.twitterIconText {
-    left: 12%;
-}
-
-.myProjectsIconText {
-    left: 8%;
-}
-
-.myCurriculumVitaeIconText {
-    left: 15%;
 }
 
 .divBriefDescription {
@@ -152,7 +52,6 @@
     max-width: 1000px;
     text-align: center;
     margin: auto;
-    /* border: 1px solid black; */
 }
 
 .divBriefDescriptionInnerDiv {
@@ -160,7 +59,6 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
-    /* border: 1px solid black; */
 }
 
 .divMoreInfoIcons {
@@ -169,7 +67,6 @@
     height: 120px;
     max-width: 1000px;
     margin: auto;
-    /* border: 1px solid white; */
 }
 
 @media (max-width:1024px) {
@@ -181,12 +78,12 @@
         top: 15%;
     }
 
-    .div01 {
+    .bannerAndPortrait {
         width: 100%;
         height: 275px;
     }
 
-    .divMyName, .divSocialMedia, .divBriefDescription, .divMoreInfoIcons {
+    .myName, .topIcons, .divBriefDescription, .divMoreInfoIcons {
         width: 100%;
     }
 }

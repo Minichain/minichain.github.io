@@ -1,3 +1,7 @@
+* {
+	/* outline: 1px solid red; */
+}
+
 a:link {
     color: rgb(219, 219, 219);
     background-color: transparent;
@@ -20,4 +24,111 @@ a:active {
     color: rgb(219, 219, 219);
     background-color: transparent;
     text-decoration: underline;
+}
+
+.topIcons {
+    position: relative;
+    width: 1000px;
+    height: 95px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.githubIcon, .linkedinIcon, .instagramIcon, .twitterIcon, .myCurriculumVitaeIcon, .myProjectsIcon, .homeIcon {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    position: absolute;
+    transition: transform .2s;
+}
+
+.githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText, .myCurriculumVitaeIconText, .myProjectsIconText, .homeIconText {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 125%;
+    opacity: 0;
+    transition: .5s ease;
+    margin: auto;
+}
+
+.githubIconContainer, .linkedinIconContainer, .instagramIconContainer, .twitterIconContainer, .myCurriculumVitaeIconContainer, .myProjectsIconContainer, .homeIconContainer {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.githubIconContainer {
+    left: calc(16.6% - 25px);
+}
+
+.linkedinIconContainer {
+    left: calc(33.3% - 25px);
+}
+
+.myProjectsIconContainer, .homeIconContainer {
+    left: calc(50% - 25px);
+}
+
+.instagramIconContainer {
+    left: calc(66.6% - 25px);
+}
+
+.twitterIconContainer {
+    left: calc(83.4% - 25px);
+}
+
+.myCurriculumVitaeIconContainer {
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+
+.githubIconContainer:hover .githubIconText, 
+.linkedinIconContainer:hover .linkedinIconText, 
+.instagramIconContainer:hover .instagramIconText, 
+.twitterIconContainer:hover .twitterIconText,
+.myCurriculumVitaeIconContainer:hover .myCurriculumVitaeIconText,
+.myProjectsIconContainer:hover .myProjectsIconText,
+.homeIconContainer:hover .homeIconText {
+    opacity: 1;
+}
+
+.githubIcon:hover, .linkedinIcon:hover, .instagramIcon:hover, .twitterIcon:hover, .myCurriculumVitaeIcon:hover, .myProjectsIcon:hover, .homeIcon:hover {
+    -ms-transform: scale(1.25); /* IE 9 */
+    -webkit-transform: scale(1.25); /* Safari 3-8 */
+    transform: scale(1.25); 
+}
+
+.githubIconText {
+    left: 15%;
+}
+
+.linkedinIconText {
+    left: 7%;
+}
+
+.myProjectsIconText {
+    left: 8%;
+}
+
+.homeIconText {
+    left: 20%;
+}
+
+.instagramIconText {
+    left: 0%;
+}
+
+.twitterIconText {
+    left: 12%;
+}
+
+.myCurriculumVitaeIconText {
+    left: 15%;
+}
+
+@media (max-width:1024px) {
+    .topIcons {
+        width: 100%;
+    }
 }
