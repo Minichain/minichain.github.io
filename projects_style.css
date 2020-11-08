@@ -103,3 +103,13 @@
         width: 100%;
     }
 }
+
+@media (max-width:600px) {
+    .projectImage {
+        width: 100%;
+    }
+
+    .project {
+        flex-direction: column;
+    }
+}

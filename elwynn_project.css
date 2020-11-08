@@ -53,7 +53,7 @@
     transform: scale(1.25); 
 }
 
-.divProject01Description, .divProject01PatchNotes {
+.projectDescription, .projectPatchNotes {
     position: relative;
     width: 1000px;
     max-width: 1000px;
@@ -61,18 +61,23 @@
     margin: auto;
 }
 
-.divProject01DescriptionInnerDiv, .divProject01PatchNotesInnerDiv {
+.projectDescriptionInnerDiv, .projectPatchNotesInnerDiv {
     position: relative;
     text-align: left;
-    margin-left: 15%;
+    margin: 5%;
 }
 
-.divProject01Demo, .divProject01Downloads {
+.projectDemo, .divProject01Downloads {
     position: relative;
     width: 1000px;
     max-width: 1000px;
     text-align: center;
     margin: auto;
+}
+
+.projectVideo {
+    width: 480px;
+    height: 270px;
 }
 
 .divProject01DownloadsInnerDiv {
@@ -91,9 +96,16 @@
 }
 
 @media (max-width:1024px) {
-    .divTop, .divTopIcons, .divProject01, .divBottomIcons, .divProject01Description, .divProject01Demo, .divProject01Downloads, .divProject01PatchNotes {
+    .divTop, .divTopIcons, .divProject01, .divBottomIcons, .projectDescription, .projectDemo, .divProject01Downloads, .projectPatchNotes {
         width: 100%;
     }
+}
+
+@media (max-width:480px) {
+    .projectVideo {
+        width: 400px;
+        height: 225px;
+    } 
 }
 
 .project01DownloadButton {
