@@ -34,7 +34,7 @@ a:active {
     transition: transform .2s;
 }
 
-.homeIcon {
+.myProjectsIcon, .homeIcon {
     filter: drop-shadow(1px 1px 14px white);
 }
 
