@@ -46,6 +46,14 @@
     margin: auto;
 }
 
+.topIcons {
+    position: relative;
+    width: 1000px;
+    height: 95px;
+    max-width: 1000px;
+    margin: auto;
+}
+
 .divBriefDescription {
     position: relative;
     width: 1000px;

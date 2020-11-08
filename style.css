@@ -26,20 +26,16 @@ a:active {
     text-decoration: underline;
 }
 
-.topIcons {
-    position: relative;
-    width: 1000px;
-    height: 95px;
-    max-width: 1000px;
-    margin: auto;
-}
-
 .githubIcon, .linkedinIcon, .instagramIcon, .twitterIcon, .myCurriculumVitaeIcon, .myProjectsIcon, .homeIcon {
     width: 50px;
     height: 50px;
     margin: auto;
     position: absolute;
     transition: transform .2s;
+}
+
+.homeIcon {
+    filter: drop-shadow(1px 1px 14px white);
 }
 
 .githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText, .myCurriculumVitaeIconText, .myProjectsIconText, .homeIconText {

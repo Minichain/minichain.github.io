@@ -10,20 +10,13 @@
     background-position: center;
 }
 
-.divTop {
-    position: relative;
-    width: 1000px;
-    height: 100px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.divTopIcons {
+.topIcons {
     position: relative;
     width: 1000px;
     height: 50px;
     max-width: 1000px;
-    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .backIcon {
@@ -67,7 +60,7 @@
     margin: 5%;
 }
 
-.projectDemo, .divProject01Downloads {
+.projectDemo, .projectDownloads {
     position: relative;
     width: 1000px;
     max-width: 1000px;
@@ -80,13 +73,13 @@
     height: 270px;
 }
 
-.divProject01DownloadsInnerDiv {
+.projectDownloadsInnerDiv {
     position: relative;
     text-align: center;
     margin-top: 25px;
 }
 
-.divBottomIcons {
+.bottomIcons {
     position: relative;
     width: 1000px;
     height: 50px;
@@ -96,19 +89,19 @@
 }
 
 @media (max-width:1024px) {
-    .divTop, .divTopIcons, .divProject01, .divBottomIcons, .projectDescription, .projectDemo, .divProject01Downloads, .projectPatchNotes {
+    .topIcons, .project, .bottomIcons, .projectDescription, .projectDemo, .projectDownloads, .projectPatchNotes {
         width: 100%;
     }
 }
 
-@media (max-width:480px) {
+@media (max-width:600px) {
     .projectVideo {
         width: 400px;
         height: 225px;
-    } 
+    }
 }
 
-.project01DownloadButton {
+.projectDownloadButton {
     background-color: DodgerBlue;
     border: none;
     color: white;
@@ -118,6 +111,6 @@
 }
   
 /* Darker background on mouse-over */
-.project01DownloadButton:hover {
+.projectDownloadButton:hover {
     background-color: RoyalBlue;
 }

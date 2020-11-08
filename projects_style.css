@@ -10,20 +10,13 @@
     background-position: center;
 }
 
-.divTop {
+.topIcons {
     position: relative;
     width: 1000px;
     height: 50px;
     max-width: 1000px;
-    margin: auto;
-}
-
-.divTopIcons {
-    position: relative;
-    width: 1000px;
-    height: 50px;
-    max-width: 1000px;
-    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .backIcon:hover {
@@ -99,7 +92,7 @@
 }
 
 @media (max-width:1024px) {
-    .divTop, .projects, .divTopIcons, .divBottomIcons {
+    .divTop, .projects, .topIcons, .bottomIcons {
         width: 100%;
     }
 }
