@@ -75,8 +75,8 @@
 }
 
 .projectVideo {
-    width: 480px;
-    height: 270px;
+    width: 853px;
+    height: 480px;
 }
 
 .projectDownloadsInnerDiv {
@@ -97,6 +97,13 @@
 @media (max-width:1024px) {
     .topIcons, .project, .bottomIcons, .projectDescription, .projectDemo, .projectDownloads, .projectPatchNotes {
         width: 100%;
+    }
+}
+
+@media (max-width:1200px) {
+    .projectVideo {
+        width: 480px;
+        height: 270px;
     }
 }
 

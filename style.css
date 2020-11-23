@@ -48,6 +48,10 @@ a:active {
     margin: auto;
 }
 
+.myCurriculumVitaeIconText {
+    opacity: 1;
+}
+
 .githubIconContainer, .linkedinIconContainer, .instagramIconContainer, .twitterIconContainer, .myCurriculumVitaeIconContainer, .myProjectsIconContainer, .homeIconContainer {
     width: 50px;
     height: 50px;
@@ -83,7 +87,6 @@ a:active {
 .linkedinIconContainer:hover .linkedinIconText, 
 .instagramIconContainer:hover .instagramIconText, 
 .twitterIconContainer:hover .twitterIconText,
-.myCurriculumVitaeIconContainer:hover .myCurriculumVitaeIconText,
 .myProjectsIconContainer:hover .myProjectsIconText,
 .homeIconContainer:hover .homeIconText {
     opacity: 1;
