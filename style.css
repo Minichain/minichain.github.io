@@ -35,7 +35,7 @@ a:active {
 }
 
 .myProjectsIcon, .homeIcon {
-    filter: drop-shadow(1px 1px 14px white);
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
 }
 
 .githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText, .myCurriculumVitaeIconText, .myProjectsIconText, .homeIconText {

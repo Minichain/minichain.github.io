@@ -14,14 +14,14 @@
     position: relative;
     width: 1000px;
     max-width: 1000px;
-    height: 100px;
+    height: 150px;
     margin: auto; 
 }
 
 .topIconsInnerDiv {
     position: relative;
     height: 50px;
-    padding: 25px;
+    padding: 50px;
 }
 
 
