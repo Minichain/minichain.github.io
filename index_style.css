@@ -35,6 +35,7 @@
     top: 40%;
     left: calc(50% - 100px);
     z-index: 1;
+    filter: drop-shadow(0px 0px 16px black);
 }
 
 .myName {
