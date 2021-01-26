@@ -26,7 +26,15 @@ a:active {
     text-decoration: underline;
 }
 
-.githubIcon, .linkedinIcon, .instagramIcon, .twitterIcon, .myCurriculumVitaeIcon, .myProjectsIcon, .homeIcon {
+.githubIcon, .linkedinIcon, .instagramIcon, .twitterIcon {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    position: absolute;
+    transition: transform .2s;
+}
+
+.myCurriculumVitaeIcon, .myProjectsIcon, .homeIcon {
     width: 50px;
     height: 50px;
     margin: auto;
@@ -52,18 +60,25 @@ a:active {
     opacity: 1;
 }
 
-.githubIconContainer, .linkedinIconContainer, .instagramIconContainer, .twitterIconContainer, .myCurriculumVitaeIconContainer, .myProjectsIconContainer, .homeIconContainer {
+.githubIconContainer, .linkedinIconContainer, .instagramIconContainer, .twitterIconContainer {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+.myCurriculumVitaeIconContainer, .myProjectsIconContainer, .homeIconContainer {
     width: 50px;
     height: 50px;
     position: absolute;
 }
 
 .githubIconContainer {
-    left: calc(16.6% - 25px);
+    left: calc(16.6% - 20px);
 }
 
 .linkedinIconContainer {
-    left: calc(33.3% - 25px);
+    left: calc(33.3% - 20px);
 }
 
 .myProjectsIconContainer, .homeIconContainer {
@@ -71,15 +86,14 @@ a:active {
 }
 
 .instagramIconContainer {
-    left: calc(66.6% - 25px);
+    left: calc(66.6% - 20px);
 }
 
 .twitterIconContainer {
-    left: calc(83.4% - 25px);
+    left: calc(83.4% - 20px);
 }
 
 .myCurriculumVitaeIconContainer {
-    top: calc(50% - 25px);
     left: calc(50% - 25px);
 }
 
@@ -99,11 +113,11 @@ a:active {
 }
 
 .githubIconText {
-    left: 15%;
+    left: 10%;
 }
 
 .linkedinIconText {
-    left: 7%;
+    left: -2%;
 }
 
 .myProjectsIconText {
@@ -115,15 +129,15 @@ a:active {
 }
 
 .instagramIconText {
-    left: 0%;
+    left: -15%;
 }
 
 .twitterIconText {
-    left: 12%;
+    left: 4%;
 }
 
 .myCurriculumVitaeIconText {
-    left: 15%;
+    left: 18%;
 }
 
 @media (max-width:1024px) {
