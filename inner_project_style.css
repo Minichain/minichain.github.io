@@ -24,7 +24,6 @@
     padding: 50px;
 }
 
-
 .backIcon {
     width: 50px;
     height: 50px;
@@ -66,19 +65,6 @@
     margin: 5%;
 }
 
-.projectDemo, .projectDownloads {
-    position: relative;
-    width: 1000px;
-    max-width: 1000px;
-    text-align: center;
-    margin: auto;
-}
-
-.projectVideo {
-    width: 853px;
-    height: 480px;
-}
-
 .projectDownloadsInnerDiv {
     position: relative;
     text-align: center;
@@ -92,26 +78,6 @@
     max-width: 1000px;
     margin: auto;
     margin-top: 5%;
-}
-
-@media (max-width:1024px) {
-    .topIcons, .project, .bottomIcons, .projectDescription, .projectDemo, .projectDownloads, .projectPatchNotes {
-        width: 100%;
-    }
-}
-
-@media (max-width:1200px) {
-    .projectVideo {
-        width: 480px;
-        height: 270px;
-    }
-}
-
-@media (max-width:600px) {
-    .projectVideo {
-        width: 356px;
-        height: 200px;
-    }
 }
 
 .projectDownloadButton {

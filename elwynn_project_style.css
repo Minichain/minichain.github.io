@@ -1,0 +1,13 @@
+.projectDemo, .projectDownloads {
+    position: relative;
+    width: 1000px;
+    max-width: 1000px;
+    text-align: center;
+    margin: auto;
+}
+
+@media (max-width:1024px) {
+    .topIcons, .project, .bottomIcons, .projectDescription, .projectDemo, .projectDownloads, .projectPatchNotes {
+        width: 100%;
+    }
+}
