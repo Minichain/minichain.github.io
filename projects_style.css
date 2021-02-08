@@ -61,7 +61,7 @@
     width: 40%;
 }
 
-.elwynnProjectImage, .minichainsPlayerProjectImage, .eversongProjectImage {
+.elwynnProjectImage, .minichainsPlayerProjectImage, .eversongProjectImage, .webGLProjectImage {
     display: block;
     width: 100%;
     height: auto;
