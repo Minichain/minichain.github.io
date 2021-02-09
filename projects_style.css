@@ -41,13 +41,15 @@
 .projectsInnerDiv {
     position: relative;
     text-align: center;
-    margin-top: 5%;
+    margin-top: 50px;
 }
 
 .project {
     position: relative;
     display: flex;
-    margin: 10px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .projectImage {
