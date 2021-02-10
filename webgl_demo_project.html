@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="inner_project_style.css">
     <link rel="stylesheet" href="webgl_demo_project_style.css">
@@ -13,8 +14,10 @@
     <title>Minichain</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="src/webgl_project/Main.js"></script>
-    <script src="src/webgl_project/Circle.js"></script>
-    <script src="src/webgl_project/Rectangle.js"></script>
+    <script src="src/webgl_project/Mass.js"></script>
+    <script src="src/webgl_project/Coordinates.js"></script>
+    <script src="src/webgl_project/Utils.js"></script>
+    <script src="src/webgl_project/WebGLManager.js"></script>
 </script>
 </head>
 
@@ -62,7 +65,7 @@
                 <br>
 
                 <canvas id="canvas"></canvas>
-
+                <button type="button" class="btn btn-warning" onclick="resetCanvas()">Reset Canvas</button>
             </div>
         </div>
 
