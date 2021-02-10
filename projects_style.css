@@ -112,4 +112,8 @@
     .project {
         flex-direction: column;
     }
+
+    .projectDescription {
+        width: 90%;
+    }
 }

@@ -1,3 +1,6 @@
+var vertex_buffer;
+var index_Buffer;
+
 function initWebGL() {
     gl = canvas.getContext("webgl");
     if (!gl) {
@@ -16,7 +19,6 @@ function clearCanvas() {
 }
 
 function loadShader(vertex_buffer, index_Buffer) {
-
     var vertCode =
         'attribute vec3 coordinates;' +
             
@@ -62,7 +64,7 @@ function renderFigure(values) {
     var vertices = values[0];
     var indices = values[1];
 
-    var vertex_buffer = gl.createBuffer();
+    if (vertex_buffer =! null) vertex_buffer = gl.createBuffer();
     // Bind appropriate array buffer to it
     gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
     // Pass the vertex data to the buffer
@@ -70,7 +72,7 @@ function renderFigure(values) {
     // Unbind the buffer
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
 
-    var index_Buffer = gl.createBuffer();
+    if (index_Buffer =! null) index_Buffer = gl.createBuffer();
     // Bind appropriate array buffer to it
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, index_Buffer);
     // Pass the vertex data to the buffer
