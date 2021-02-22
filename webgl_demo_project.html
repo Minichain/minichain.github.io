@@ -14,6 +14,8 @@
     <title>Minichain</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="src/webgl_project/Main.js"></script>
+    <script src="src/webgl_project/Demo01.js"></script>
+    <script src="src/webgl_project/Demo02.js"></script>
     <script src="src/webgl_project/Mass.js"></script>
     <script src="src/webgl_project/Coordinates.js"></script>
     <script src="src/webgl_project/Utils.js"></script>
@@ -61,11 +63,19 @@
         <div class="projectDescription">
             <div class="projectDescriptionInnerDiv">
                 <h1>WebGL</h1>
+                <br>
                 <p>WebGL demo 01</p>
                 <br>
 
-                <canvas id="canvas"></canvas>
-                <button type="button" class="btn btn-warning" onclick="resetCanvas()">Reset Canvas</button>
+                <canvas id="canvas01"></canvas>
+                <button type="button" class="btn btn-warning" onclick="demo01.reset()">Reset Canvas</button>
+
+                <br><br><br><br>
+                <p>WebGL demo 02</p>
+                <br>
+
+                <canvas id="canvas02"></canvas>
+                <button type="button" class="btn btn-warning" onclick="demo02.reset()">Reset Canvas</button>
             </div>
         </div>
 

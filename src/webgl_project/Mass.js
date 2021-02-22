@@ -1,7 +1,7 @@
 class Mass {
-    constructor(x, y, m, d, v0) {
-        var halfWidth = canvas.width / 2;
-        var halfHeight = canvas.height / 2;
+    constructor(x, y, m, d, v0, canvasWidth, canvasHeight) {
+        var halfWidth = canvasWidth / 2;
+        var halfHeight = canvasHeight / 2;
         this.coordinates = new Coordinates(x, y);
         this.mass = m;
         this.volume = m / d;
@@ -23,7 +23,7 @@ class Mass {
         return this.r2;
     }
 
-    update(timeElapsed) {
+    update(timeElapsed, massEntities) {
         var G = 0.000000000667408;
 
         if (massEntities.length > 1) {
@@ -51,8 +51,8 @@ class Mass {
         }
     }
 
-    render() {
-        renderFigure(this.getVerticesAndIndices());
+    render(webGLManager) {
+        webGLManager.renderFigure(this.getVerticesAndIndices(), "triangles");
     }
 
     getVerticesAndIndices() {
