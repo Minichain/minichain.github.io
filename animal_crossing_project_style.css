@@ -1,0 +1,65 @@
+* {
+	/* outline: 1px solid red; */
+}
+
+.myBody {
+    /* cursor: url("res/"), auto; */
+    font: italic 1.2em "Fira Sans", serif;
+    color: white;
+    background-image: url(res/animal_crossing/spring_background_01.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	transition: background-image 1s ease-in-out;
+}
+
+.centerColumn {
+	position: relative;
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+}
+
+.monthRow {
+	position: relative;
+	width: 90%;
+	text-align: center;
+    margin: auto;
+	filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.75));
+}
+
+.topBanner {
+	position: relative;
+	width: 60%;
+	text-align: center;
+    margin: auto;
+}
+
+.imageRow {
+	position: relative;
+	width: 80%;
+	text-align: center;
+    margin: auto;
+}
+
+.image {
+	position: relative;
+	width: 100%;
+	text-align: center;
+    margin: auto;
+	filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.5));
+}
+
+.imageDescription {
+	position: absolute;
+	bottom: 5%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.25);
+	color: white;
+}
+
+@media (max-width:1024px) {
+    .centerColumn {
+        width: 100%;
+    }
+}
