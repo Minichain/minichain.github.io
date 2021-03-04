@@ -1,16 +1,26 @@
-* {
-	/* outline: 1px solid red; */
-}
-
 .myBody {
     /* cursor: url("res/"), auto; */
-    font: italic 1.2em "Fira Sans", serif;
-    color: white;
+	font-family: 'Oswald', sans-serif;
+	color: white;
     background-image: url(res/animal_crossing/spring_background_01.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	transition: background-image 1s ease-in-out;
+	transition: background-image 0.25s ease;
+}
+
+.topIcons {
+    position: relative;
+    width: 1000px;
+    max-width: 1000px;
+    height: 150px;
+    margin: auto; 
+}
+
+.topIconsInnerDiv {
+    position: relative;
+    height: 50px;
+    padding: 50px;
 }
 
 .centerColumn {
@@ -60,6 +70,10 @@
 
 @media (max-width:1024px) {
     .centerColumn {
+        width: 100%;
+    }
+
+	.divTop, .topIcons {
         width: 100%;
     }
 }
