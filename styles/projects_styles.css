@@ -1,0 +1,119 @@
+.myBody {
+    /* cursor: url("src/images/"), auto; */
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    background-color: black;
+    background-image: url("../res/images/background_image_1920x1080_01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.topIcons {
+    position: relative;
+    width: 1000px;
+    max-width: 1000px;
+    height: 150px;
+    margin: auto; 
+}
+
+.topIconsInnerDiv {
+    position: relative;
+    height: 50px;
+    padding: 50px;
+}
+
+.backIcon:hover {
+    -ms-transform: scale(1.25); /* IE 9 */
+    -webkit-transform: scale(1.25); /* Safari 3-8 */
+    transform: scale(1.25); 
+}
+
+.projects {
+    position: relative;
+    width: 1000px;
+    max-width: 1000px;
+    text-align: center;
+    margin: auto;
+}
+
+.projectsInnerDiv {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.project {
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.projectImage {
+    position: relative;
+    width: 60%;
+}
+
+.projectDescription {
+    position: relative;
+    margin: auto;
+    width: 40%;
+}
+
+.elwynnProjectImage, .minichainsPlayerProjectImage, .eversongProjectImage, .webGLProjectImage {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.projectOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #5100ba;
+}
+
+.projectOverlayText {
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.projectImage:hover .projectOverlay {
+    opacity: 0.7;
+}
+
+@media (max-width:1024px) {
+    .divTop, .projects, .topIcons, .bottomIcons {
+        width: 100%;
+    }
+}
+
+@media (max-width:600px) {
+    .projectImage {
+        width: 100%;
+    }
+
+    .project {
+        flex-direction: column;
+    }
+
+    .projectDescription {
+        width: 90%;
+    }
+}

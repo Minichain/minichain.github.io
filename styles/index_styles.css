@@ -1,0 +1,98 @@
+.myBody {
+    /* cursor: url("src/images/"), auto; */
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    background-color: black;
+    background-image: url("../res/images/background_image_1920x1080_01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.bannerAndPortrait {
+    position: relative;
+    height: 350px;
+    max-width:1000px;
+    max-height:350px;
+    margin: auto;
+}
+
+.bannerImage {
+    width: 1000px;
+    height: 270px;
+    max-width:100%;
+    max-height:100%;
+    position: absolute;
+    opacity: 1;
+    z-index: 0;
+}
+
+.portraitImage {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 40%;
+    left: calc(50% - 100px);
+    z-index: 1;
+    filter: drop-shadow(0px 0px 16px black);
+}
+
+.myName {
+    position: relative;
+    height: 150px;
+    max-width:1000px;
+    text-align: center;
+    font-size: 25px;
+    margin: auto;
+}
+
+.topIcons {
+    position: relative;
+    width: 1000px;
+    height: 95px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.divBriefDescription {
+    position: relative;
+    width: 1000px;
+    max-width: 1000px;
+    text-align: center;
+    margin: auto;
+}
+
+.divBriefDescriptionInnerDiv {
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+.divMoreInfoIcons {
+    position: relative;
+    width: 1000px;
+    height: 120px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+@media (max-width:1024px) {
+    .bannerImage {
+        opacity: 0;
+    }
+
+    .portraitImage {
+        top: 15%;
+    }
+
+    .bannerAndPortrait {
+        width: 100%;
+        height: 275px;
+    }
+
+    .myName, .topIcons, .divBriefDescription, .divMoreInfoIcons {
+        width: 100%;
+    }
+}
