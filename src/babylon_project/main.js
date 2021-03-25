@@ -187,7 +187,7 @@ function onResize() {
 }
 
 function updateCanvas() {
-    canvas.width = canvas.parentElement.clientWidth * 0.9;    // 90% of parent width
+    canvas.width = canvas.parentElement.clientWidth;
     canvas.height = canvas.width * (9 / 16);
     canvas.style.width = canvas.width;
     canvas.style.height = canvas.height;
