@@ -43,15 +43,6 @@ function initScene() {
     light.position = new BABYLON.Vector3(3, 9, 3);
     light.intensity = 0.75;
 
-    var sphereName = "";
-    var sphere;
-
-    var cylinderName = "";
-    var cylinder;
-
-    var boxName = "";
-    var box;
-
     var ground = BABYLON.Mesh.CreateGround("ground", 128, 128, 1, scene);
     ground.receiveShadows = true;
     var backgroundMaterial = new BABYLON.BackgroundMaterial("backgroundMaterial", scene);
@@ -62,39 +53,41 @@ function initScene() {
 
     var shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
 
+    function addFigure(figureType, iteration, color, position) {
+        var figure;
+        var figureName = figureType + iteration;
+
+        switch (figureType) {
+            case "cylinder":
+                figure = BABYLON.MeshBuilder.CreateCylinder(figureName, {}, scene);
+                break;
+            case "sphere":
+                figure = BABYLON.MeshBuilder.CreateSphere(figureName, {}, scene);
+                break;
+            case "box":
+            default:
+                figure = BABYLON.MeshBuilder.CreateBox(figureName, {
+                    size: 1
+                }, scene);
+                break;
+        }
+        
+        figure.position = position;
+        var material = new BABYLON.StandardMaterial("material", scene);
+        material.diffuseColor = color;
+        figure.material = material;
+        shadowGenerator.addShadowCaster(figure);
+    }    
+
     for (var i = 0; i < N; i++) {
         /* Cylinders */
-        cylinderName = "cylinder" + i;
-        cylinder = BABYLON.MeshBuilder.CreateCylinder(cylinderName, {}, scene);
-        cylinder.position = new BABYLON.Vector3(i * 5 - (N / 2) * 5, 7.5, 0);
-        var material = new BABYLON.StandardMaterial("material", scene);
-        material.diffuseColor = new BABYLON.Color3(Math.random(), Math.random(), 0);
-        cylinder.material = material;
+        addFigure("cylinder", i, new BABYLON.Color3(Math.random(), Math.random(), Math.random()), new BABYLON.Vector3(i * 5 - (N / 2) * 5, 7.5, 0))
 
         /* Spheres */
-        sphereName = "sphere" + i;
-        sphere = BABYLON.MeshBuilder.CreateSphere(sphereName, {
-            drameter: 1
-        }, scene);
-        sphere.position = new BABYLON.Vector3(i * 5 - (N / 2) * 5, 5, 0);
-        var material = new BABYLON.StandardMaterial("material", scene);
-        material.diffuseColor = new BABYLON.Color3(1, Math.random(), 0);
-        sphere.material = material;        
+        addFigure("sphere", i, new BABYLON.Color3(Math.random(), Math.random(), Math.random()), new BABYLON.Vector3(i * 5 - (N / 2) * 5, 5, 0))  
 
         /* Boxes */
-        boxName = "box" + i;
-        box = BABYLON.MeshBuilder.CreateBox(boxName, {
-            size: 1
-        }, scene);
-        box.position = new BABYLON.Vector3(i * 5 - (N / 2) * 5, 2.5, 0);
-        var material = new BABYLON.StandardMaterial("material", scene);
-        material.diffuseColor = new BABYLON.Color3(0, Math.random(), Math.random());
-        box.material = material;
-
-        /* Add Shadows */
-        shadowGenerator.addShadowCaster(cylinder);
-        shadowGenerator.addShadowCaster(sphere);
-        shadowGenerator.addShadowCaster(box);
+        addFigure("box", i, new BABYLON.Color3(Math.random(), Math.random(), Math.random()), new BABYLON.Vector3(i * 5 - (N / 2) * 5, 2.5, 0))  
     }
 
     /* Lines */
@@ -124,10 +117,54 @@ function initScene() {
         points
     }, scene);
 
-    const backgroundMusic = new BABYLON.Sound("background_music", "res/audio/Blear Moon - Orchard.mp3", scene, null, {
+    function createCylinderTable(name, height, diameter, position, color) {
+        var table1 = BABYLON.MeshBuilder.CreateCylinder(name, {
+            height: height,
+            diameter: diameter
+        }, scene);
+        table1.position = position;
+        var material = new BABYLON.StandardMaterial("material", scene);
+        material.diffuseColor = color;
+        table1.material = material;    
+    }
+
+    createCylinderTable("table1", 4, 4, new BABYLON.Vector3(-25, 2, -25), new BABYLON.Color3(0.75, 0, 0));
+    createCylinderTable("table2", 4, 4, new BABYLON.Vector3(0, 2, -25), new BABYLON.Color3(0, 0.75, 0));
+    createCylinderTable("table3", 4, 4, new BABYLON.Vector3(25, 2, -25), new BABYLON.Color3(0, 0, 0.75));
+
+    const music1 = new BABYLON.Sound("background_music", "res/audio/track2.wav", scene, soundReady, {
         loop: true,
-        autoplay: true
+        spatialSound: true,
+        distanceModel: "exponential",
+        rolloffFactor: 0.5
     });
+    music1.setPosition(new BABYLON.Vector3(-25, 2, -25));
+    const music2 = new BABYLON.Sound("background_music", "res/audio/track1.wav", scene, soundReady, {
+        loop: true,
+        spatialSound: true,
+        distanceModel: "exponential",
+        rolloffFactor: 0.5
+    });
+    music2.setPosition(new BABYLON.Vector3(0, 2, -25));
+    const music3 = new BABYLON.Sound("background_music", "res/audio/track3.wav", scene, soundReady, {
+        loop: true,
+        spatialSound: true,
+        distanceModel: "exponential",
+        rolloffFactor: 0.5
+    });
+    music3.setPosition(new BABYLON.Vector3(25, 2, -25));
+
+    var soundsReady = 0;
+    function soundReady() {
+        soundsReady++;
+        if (soundsReady === 3) {
+            music1.play();
+            music2.play();
+            music3.play();
+        }
+    }
+
+    // scene.debugLayer.show();
 
     return scene;
 }

@@ -10,25 +10,36 @@ class Camera {
     }
 
     updateCamera() {
-        var speed = InputListener.isShiftKeyPressed ? 0.5 : 0.25;
+        var speed = InputListener.isShiftKeyPressed ? 0.30 : 0.15;
         var frontVector = this.camera.getFrontPosition(1).subtract(this.camera.position).normalize();
+        var movementVector = new BABYLON.Vector3(0, 0, 0);
         if (InputListener.isWKeyPressed) {
-            this.camera.position.x += speed * frontVector.x;
-            this.camera.position.z += speed * frontVector.z;
+            movementVector.x += frontVector.x;
+            movementVector.z += frontVector.z;
         }
         if (InputListener.isSKeyPressed) {
-            this.camera.position.x -= speed * frontVector.x;
-            this.camera.position.z -= speed * frontVector.z;
+            movementVector.x -= frontVector.x;
+            movementVector.z -= frontVector.z;
         }
         var matrix = BABYLON.Matrix.RotationAxis(BABYLON.Axis.Y, Math.PI / 2);
         var sideVector = BABYLON.Vector3.TransformCoordinates(frontVector, matrix).normalize();
         if (InputListener.isAKeyPressed) {
-            this.camera.position.x -= speed * sideVector.x;
-            this.camera.position.z -= speed * sideVector.z;
+            movementVector.x -= sideVector.x;
+            movementVector.z -= sideVector.z;
         }
         if (InputListener.isDKeyPressed) {
-            this.camera.position.x += speed * sideVector.x;
-            this.camera.position.z += speed * sideVector.z;
+            movementVector.x += sideVector.x;
+            movementVector.z += sideVector.z;
+        }
+
+        movementVector.normalize();
+        this.camera.position.x += speed * movementVector.x;
+        this.camera.position.y += speed * movementVector.y;
+        this.camera.position.z += speed * movementVector.z;
+
+        var minYPosition = 5;
+        if (this.camera.position.y < minYPosition) {
+            this.camera.position.y = minYPosition;
         }
     }    
 
