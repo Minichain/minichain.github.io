@@ -136,21 +136,21 @@ function initScene() {
         loop: true,
         spatialSound: true,
         distanceModel: "exponential",
-        rolloffFactor: 0.5
+        rolloffFactor: 0.75
     });
     music1.setPosition(new BABYLON.Vector3(-25, 2, -25));
     const music2 = new BABYLON.Sound("background_music", "res/audio/track1.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
         distanceModel: "exponential",
-        rolloffFactor: 0.5
+        rolloffFactor: 0.75
     });
     music2.setPosition(new BABYLON.Vector3(0, 2, -25));
     const music3 = new BABYLON.Sound("background_music", "res/audio/track3.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
         distanceModel: "exponential",
-        rolloffFactor: 0.5
+        rolloffFactor: 0.75
     });
     music3.setPosition(new BABYLON.Vector3(25, 2, -25));
 
@@ -164,6 +164,25 @@ function initScene() {
         }
     }
 
+    // BABYLON.SceneLoader.Append("res/meshes/", "guitar.stl", scene, null);
+    var guitarMesh;
+    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
+        guitarMesh = meshes[0];
+        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
+        guitarMesh.position = new BABYLON.Vector3(-25, 4.1, -23.75);
+        guitarMesh.checkCollisions = true;
+    });
+    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
+        guitarMesh = meshes[0];
+        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
+        guitarMesh.position = new BABYLON.Vector3(0, 4.1, -23.75);
+    });
+    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
+        guitarMesh = meshes[0];
+        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
+        guitarMesh.position = new BABYLON.Vector3(25, 4.1, -23.75);
+    });
+    
     // scene.debugLayer.show();
 
     return scene;
