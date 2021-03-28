@@ -235,6 +235,14 @@ engine.runRenderLoop(() => {
 });
 
 function onLoad() {
+    function setFullscreen() {
+        canvas.requestFullscreen();
+    }
+    canvas.addEventListener("click", setFullscreen);
+    canvas.addEventListener('fullscreenchange', (event) => {
+        updateCanvas(document.fullscreenElement);
+    });
+
     updateCanvas();
 }
 
@@ -242,9 +250,16 @@ function onResize() {
     updateCanvas();
 }
 
-function updateCanvas() {
-    canvas.width = canvas.parentElement.clientWidth;
-    canvas.height = canvas.width * (9 / 16);
+function updateCanvas(isFullscreen = false) {
+    if (isFullscreen) {
+        console.log("Canvas is Full Screen!!");
+        canvas.width = screen.availWidth;
+        canvas.height = screen.availHeight;
+    } else {
+        console.log("Canvas isn't Full Screen!!");
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.width * (9 / 16); 
+    }
     canvas.style.width = canvas.width;
     canvas.style.height = canvas.height;
 }
