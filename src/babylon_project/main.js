@@ -39,9 +39,13 @@ function initScene() {
 	document.addEventListener("mozpointerlockchange", pointerLockChange, false);
 	document.addEventListener("webkitpointerlockchange", pointerLockChange, false);
 
+    /* Light */
+
     var light = new BABYLON.DirectionalLight("light1", new BABYLON.Vector3(-1, -3, 1), scene);
-    light.position = new BABYLON.Vector3(3, 9, 3);
-    light.intensity = 0.75;
+    light.position = new BABYLON.Vector3(30, 90, 30);
+    light.intensity = 1;
+
+    /* Ground */
 
     var ground = BABYLON.Mesh.CreateGround("ground", 128, 128, 1, scene);
     ground.receiveShadows = true;
@@ -51,7 +55,11 @@ function initScene() {
     backgroundMaterial.shadowLevel = 0.75;
     ground.material = backgroundMaterial;
 
+    /* Figures */
+
     var shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
+    shadowGenerator.enableSoftTransparentShadow = false;
+    shadowGenerator.transparencyShadow = true;
 
     function addFigure(figureType, iteration, color, position) {
         var figure;
@@ -118,20 +126,46 @@ function initScene() {
     }, scene);
 
     function createCylinderTable(name, height, diameter, position, color) {
-        var table1 = BABYLON.MeshBuilder.CreateCylinder(name, {
+        var table = BABYLON.MeshBuilder.CreateCylinder(name, {
             height: height,
             diameter: diameter
         }, scene);
-        table1.position = position;
+        table.position = position;
         var material = new BABYLON.StandardMaterial("material", scene);
         material.diffuseColor = color;
-        table1.material = material;    
+        table.material = material;    
+        shadowGenerator.addShadowCaster(table);
+        table.receiveShadows = true;
     }
 
     createCylinderTable("table1", 4, 4, new BABYLON.Vector3(-25, 2, -25), new BABYLON.Color3(0.75, 0, 0));
     createCylinderTable("table2", 4, 4, new BABYLON.Vector3(0, 2, -25), new BABYLON.Color3(0, 0.75, 0));
     createCylinderTable("table3", 4, 4, new BABYLON.Vector3(25, 2, -25), new BABYLON.Color3(0, 0, 0.75));
 
+    function addGuitar(position, color) {
+        BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
+            meshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
+            meshes[0].position = position;
+            meshes[0].rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
+            meshes[0].rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
+            var material = new BABYLON.StandardMaterial("material", scene);
+            material.diffuseColor = color;
+            meshes[0].material = material;    
+            shadowGenerator.addShadowCaster(meshes[0]);
+            var t = 0;
+            var height = position.y;
+            scene.onBeforeRenderObservable.add(() => {
+                t += 0.025 % (2 * Math.PI);
+                meshes[0].position.y = height + Math.sin(t) * 0.5;
+            });
+        });
+    }
+
+    addGuitar(new BABYLON.Vector3(-26.25, 6.2, -25), new BABYLON.Color3(0.75, 0, 0));
+    addGuitar(new BABYLON.Vector3(-1.25, 6.2, -25), new BABYLON.Color3(0, 0.75, 0));
+    addGuitar(new BABYLON.Vector3(23.75, 6.2, -25), new BABYLON.Color3(0, 0, 0.75));
+
+    /* Music */
     const music1 = new BABYLON.Sound("background_music", "res/audio/track2.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
@@ -139,6 +173,7 @@ function initScene() {
         rolloffFactor: 0.75
     });
     music1.setPosition(new BABYLON.Vector3(-25, 2, -25));
+
     const music2 = new BABYLON.Sound("background_music", "res/audio/track1.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
@@ -146,6 +181,7 @@ function initScene() {
         rolloffFactor: 0.75
     });
     music2.setPosition(new BABYLON.Vector3(0, 2, -25));
+
     const music3 = new BABYLON.Sound("background_music", "res/audio/track3.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
@@ -164,45 +200,6 @@ function initScene() {
         }
     }
 
-    // BABYLON.SceneLoader.Append("res/meshes/", "guitar.stl", scene, null);
-    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
-        var guitarMesh = meshes[0];
-        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
-        guitarMesh.position = new BABYLON.Vector3(-26.25, 6.2, -25);
-        guitarMesh.rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
-        guitarMesh.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
-        var t = 0;
-        scene.onBeforeRenderObservable.add(function () {
-            t += 0.025;
-            guitarMesh.position.y = 6.2 + Math.sin(t) * 0.5;
-        });
-    });
-
-    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
-        var guitarMesh = meshes[0];
-        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
-        guitarMesh.position = new BABYLON.Vector3(-1.25, 6.2, -25);
-        guitarMesh.rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
-        guitarMesh.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
-        var t = 0;
-        scene.onBeforeRenderObservable.add(function () {
-            t += 0.025;
-            guitarMesh.position.y = 6.2 + Math.sin(t) * 0.5;
-        });
-    });
-    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
-        var guitarMesh = meshes[0];
-        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
-        guitarMesh.position = new BABYLON.Vector3(23.75, 6.2, -25);
-        guitarMesh.rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
-        guitarMesh.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
-        var t = 0;
-        scene.onBeforeRenderObservable.add(function () {
-            t += 0.025;
-            guitarMesh.position.y = 6.2 + Math.sin(t) * 0.5;
-        });
-    });
-    
     // scene.debugLayer.show();
 
     return scene;
