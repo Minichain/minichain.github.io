@@ -165,22 +165,42 @@ function initScene() {
     }
 
     // BABYLON.SceneLoader.Append("res/meshes/", "guitar.stl", scene, null);
-    var guitarMesh;
     BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
-        guitarMesh = meshes[0];
+        var guitarMesh = meshes[0];
         guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
-        guitarMesh.position = new BABYLON.Vector3(-25, 4.1, -23.75);
-        guitarMesh.checkCollisions = true;
+        guitarMesh.position = new BABYLON.Vector3(-26.25, 6.2, -25);
+        guitarMesh.rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
+        guitarMesh.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
+        var t = 0;
+        scene.onBeforeRenderObservable.add(function () {
+            t += 0.025;
+            guitarMesh.position.y = 6.2 + Math.sin(t) * 0.5;
+        });
+    });
+
+    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
+        var guitarMesh = meshes[0];
+        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
+        guitarMesh.position = new BABYLON.Vector3(-1.25, 6.2, -25);
+        guitarMesh.rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
+        guitarMesh.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
+        var t = 0;
+        scene.onBeforeRenderObservable.add(function () {
+            t += 0.025;
+            guitarMesh.position.y = 6.2 + Math.sin(t) * 0.5;
+        });
     });
     BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
-        guitarMesh = meshes[0];
+        var guitarMesh = meshes[0];
         guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
-        guitarMesh.position = new BABYLON.Vector3(0, 4.1, -23.75);
-    });
-    BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
-        guitarMesh = meshes[0];
-        guitarMesh.scaling=new BABYLON.Vector3(0.1,0.1,0.1);
-        guitarMesh.position = new BABYLON.Vector3(25, 4.1, -23.75);
+        guitarMesh.position = new BABYLON.Vector3(23.75, 6.2, -25);
+        guitarMesh.rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
+        guitarMesh.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
+        var t = 0;
+        scene.onBeforeRenderObservable.add(function () {
+            t += 0.025;
+            guitarMesh.position.y = 6.2 + Math.sin(t) * 0.5;
+        });
     });
     
     // scene.debugLayer.show();
@@ -260,6 +280,4 @@ function updateCanvas(isFullscreen = false) {
         canvas.width = canvas.parentElement.clientWidth;
         canvas.height = canvas.width * (9 / 16); 
     }
-    canvas.style.width = canvas.width;
-    canvas.style.height = canvas.height;
 }
