@@ -1,5 +1,3 @@
-const N = 24;
-
 const canvas = document.getElementById("canvas");
 
 const engine = new BABYLON.Engine(canvas, true);
@@ -47,21 +45,23 @@ function initScene() {
 
     /* Ground */
 
-    var ground = BABYLON.Mesh.CreateGround("ground", 128, 128, 1, scene);
+    var ground = BABYLON.Mesh.CreateGround("ground", 256, 256, 1, scene);
     ground.receiveShadows = true;
     var backgroundMaterial = new BABYLON.BackgroundMaterial("backgroundMaterial", scene);
     backgroundMaterial.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/backgroundGround.png", scene);
     backgroundMaterial.diffuseTexture.hasAlpha = true;
     backgroundMaterial.shadowLevel = 0.75;
     ground.material = backgroundMaterial;
+    ground.checkCollisions = true;
 
     /* Figures */
 
+    const N = 24;
     var shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
     shadowGenerator.enableSoftTransparentShadow = false;
     shadowGenerator.transparencyShadow = true;
 
-    function addFigure(figureType, iteration, color, position) {
+    function addFigure(figureType, iteration, color, position, left = false) {
         var figure;
         var figureName = figureType + iteration;
 
@@ -85,6 +85,23 @@ function initScene() {
         material.diffuseColor = color;
         figure.material = material;
         shadowGenerator.addShadowCaster(figure);
+
+        scene.onBeforeRenderObservable.add(() => {
+            figure.rotate(new BABYLON.Vector3(1, 0, 0), Math.PI / 100, BABYLON.Space.LOCAL);
+            if (left) {
+                figure.position.x -= 0.05;
+            } else {
+                figure.position.x += 0.05;
+            }
+            if (figure.position.x > ((N / 2) * 5)) {
+                figure.position.x = - ((N / 2) * 5);
+            } else if (figure.position.x < - ((N / 2) * 5)) {
+                figure.position.x = ((N / 2) * 5);
+            }
+            alpha = 1 - computeDistance(figure.position, new BABYLON.Vector3(0, 5, 0)) / (12 * 5);
+            if (alpha < 0) alpha = 0;
+            figure.material.alpha = alpha;    
+        });
     }    
 
     for (var i = 0; i < N; i++) {
@@ -92,7 +109,7 @@ function initScene() {
         addFigure("cylinder", i, new BABYLON.Color3(Math.random(), Math.random(), Math.random()), new BABYLON.Vector3(i * 5 - (N / 2) * 5, 7.5, 0))
 
         /* Spheres */
-        addFigure("sphere", i, new BABYLON.Color3(Math.random(), Math.random(), Math.random()), new BABYLON.Vector3(i * 5 - (N / 2) * 5, 5, 0))  
+        addFigure("sphere", i, new BABYLON.Color3(Math.random(), Math.random(), Math.random()), new BABYLON.Vector3(i * 5 - (N / 2) * 5, 5, 0), true)  
 
         /* Boxes */
         addFigure("box", i, new BABYLON.Color3(Math.random(), Math.random(), Math.random()), new BABYLON.Vector3(i * 5 - (N / 2) * 5, 2.5, 0))  
@@ -136,6 +153,7 @@ function initScene() {
         table.material = material;    
         shadowGenerator.addShadowCaster(table);
         table.receiveShadows = true;
+        table.checkCollisions = true;
     }
 
     createCylinderTable("table1", 4, 4, new BABYLON.Vector3(-25, 2, -25), new BABYLON.Color3(0.75, 0, 0));
@@ -209,41 +227,6 @@ const scene = initScene();
 
 function update() {
     camera.updateCamera();
-    updateMeshes();
-}
-
-function updateMeshes() {
-    var alpha;
-    for (var i = 0; i < N; i++) {
-        var cylinder = scene.getMeshByName("cylinder" + i);
-        cylinder.rotate(new BABYLON.Vector3(1, 0, 0), Math.PI / 100, BABYLON.Space.LOCAL);
-        cylinder.position.x += 0.05;
-        if (cylinder.position.x > ((N / 2) * 5)) {
-            cylinder.position.x = - ((N / 2) * 5);
-        }
-        alpha = 1 - computeDistance(cylinder.position, new BABYLON.Vector3(0, 7.5, 0)) / (12 * 5);
-        if (alpha < 0) alpha = 0;
-        cylinder.material.alpha = alpha;
-
-        var sphere = scene.getMeshByName("sphere" + i);
-        sphere.position.x -= 0.05;
-        if (sphere.position.x < - ((N / 2) * 5)) {
-            sphere.position.x = ((N / 2) * 5);
-        }
-        alpha = 1 - computeDistance(sphere.position, new BABYLON.Vector3(0, 5, 0)) / (12 * 5);
-        if (alpha < 0) alpha = 0;
-        sphere.material.alpha = alpha;
-
-        var box = scene.getMeshByName("box" + i);
-        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI / 100, BABYLON.Space.LOCAL);
-        box.position.x += 0.05;
-        if (box.position.x > ((N / 2) * 5)) {
-            box.position.x = - ((N / 2) * 5);
-        }
-        alpha = 1 - computeDistance(box.position, new BABYLON.Vector3(0, 2.5, 0)) / (12 * 5);
-        if (alpha < 0) alpha = 0;
-        box.material.alpha = alpha;
-    }
 }
 
 engine.runRenderLoop(() => {
