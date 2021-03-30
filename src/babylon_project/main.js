@@ -184,7 +184,7 @@ function initScene() {
     addGuitar(new BABYLON.Vector3(23.75, 6.2, -25), new BABYLON.Color3(0, 0, 0.75));
 
     /* Music */
-    const music1 = new BABYLON.Sound("background_music", "res/audio/track2.wav", scene, soundReady, {
+    const music1 = new BABYLON.Sound("background_music", "res/audio/track02.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
         distanceModel: "exponential",
@@ -192,7 +192,7 @@ function initScene() {
     });
     music1.setPosition(new BABYLON.Vector3(-25, 2, -25));
 
-    const music2 = new BABYLON.Sound("background_music", "res/audio/track1.wav", scene, soundReady, {
+    const music2 = new BABYLON.Sound("background_music", "res/audio/track01.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
         distanceModel: "exponential",
@@ -200,7 +200,7 @@ function initScene() {
     });
     music2.setPosition(new BABYLON.Vector3(0, 2, -25));
 
-    const music3 = new BABYLON.Sound("background_music", "res/audio/track3.wav", scene, soundReady, {
+    const music3 = new BABYLON.Sound("background_music", "res/audio/track03.wav", scene, soundReady, {
         loop: true,
         spatialSound: true,
         distanceModel: "exponential",
