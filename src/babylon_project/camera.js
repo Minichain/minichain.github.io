@@ -16,7 +16,7 @@ class Camera {
         this.camera.keysRight = [68];   //D
     }
 
-    updateCamera() {
+    update() {
         this.camera.speed = InputListener.isShiftKeyPressed ? 5 : 2.5;
     }    
 

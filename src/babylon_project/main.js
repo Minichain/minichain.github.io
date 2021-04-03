@@ -161,7 +161,7 @@ function initScene() {
     createCylinderTable("table3", 4, 4, new BABYLON.Vector3(25, 2, -25), new BABYLON.Color3(0, 0, 0.75));
 
     function addGuitar(position, color) {
-        BABYLON.SceneLoader.ImportMesh("", "res/meshes/", "guitar.stl", scene, function(meshes) {
+        BABYLON.SceneLoader.ImportMesh("", "res/meshes/babylon_project/", "guitar.stl", scene, function(meshes) {
             meshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
             meshes[0].position = position;
             meshes[0].rotate(new BABYLON.Vector3(0, 0, 1), Math.PI / 2, BABYLON.Space.LOCAL);
@@ -226,7 +226,7 @@ function initScene() {
 const scene = initScene();
 
 function update() {
-    camera.updateCamera();
+    camera.update();
 }
 
 engine.runRenderLoop(() => {

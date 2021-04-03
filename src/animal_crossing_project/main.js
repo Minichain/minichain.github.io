@@ -42,12 +42,12 @@ window.addEventListener("scroll", () => {
 	var monthRowDecember = document.getElementById("monthRowDecember");
 	
 	if ((pageY - monthRowDecember.offsetTop) > 0) {
-		document.body.style.backgroundImage = "url(res/animal_crossing/winter_background_01.jpg)";
+		document.body.style.backgroundImage = "url(res/images/animal_crossing/winter_background_01.jpg)";
 	} else if ((pageY - monthRowSeptember.offsetTop) > 0) {
-		document.body.style.backgroundImage = "url(res/animal_crossing/fall_background_01.jpg)";
+		document.body.style.backgroundImage = "url(res/images/animal_crossing/fall_background_01.jpg)";
 	} else if ((pageY - monthRowJune.offsetTop) > 0) {
-		document.body.style.backgroundImage = "url(res/animal_crossing/summer_background_01.jpg)";
+		document.body.style.backgroundImage = "url(res/images/animal_crossing/summer_background_01.jpg)";
 	} else if ((pageY - monthRowMarch.offsetTop) > 0) {
-		document.body.style.backgroundImage = "url(res/animal_crossing/spring_background_01.jpg)";
+		document.body.style.backgroundImage = "url(res/images/animal_crossing/spring_background_01.jpg)";
 	}
 });
