@@ -87,7 +87,7 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #5100ba;
+    background-color: #0000003a;
 }
 
 .projectOverlayText {
@@ -103,7 +103,11 @@
 }
 
 .projectImage:hover .projectOverlay {
-    opacity: 0.75;
+    opacity: 1.0;
+}
+
+.projectImage:hover .projectOverlayText {
+    filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 1.0));
 }
 
 @media (max-width:1024px) {
