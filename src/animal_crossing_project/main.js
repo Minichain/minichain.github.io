@@ -23,30 +23,35 @@ var currentSeason;
 function onLoad() {
 	lastPictureAppended = 0;
 	currentMonth = -1;
+
 	addScrollEventListener();
 	loadPictures();
 	updateMonthRows();
 	updateImageDescription();
+	getClosestMonthAndSetSeason();
 }
 
 function addScrollEventListener() {
 	window.addEventListener("scroll", () => {
 		loadPictures();
-		
-		let pageY = window.pageYOffset;
-		let monthRows = document.getElementsByClassName("monthRow");
-		let closestMonth = "January";
-		let lastComputedDistance = -1;
-		for (let i = 0; i < monthRows.length; i++) {
-			let newComputedDistance = Math.abs(pageY - monthRows[i].offsetTop);
-			if (lastComputedDistance == -1 || newComputedDistance < lastComputedDistance) {
-				closestMonth = monthRows[i].getElementsByClassName("monthText")[0].textContent.split(" ")[0];
-				lastComputedDistance = newComputedDistance;
-			}
-		}
-		
-		setSeason(getSeasonFromMonth(getMonthNumber(closestMonth)));
+		getClosestMonthAndSetSeason();
 	});
+}
+
+function getClosestMonthAndSetSeason() {
+	let pageY = window.pageYOffset;
+	let monthRows = document.getElementsByClassName("monthRow");
+	let closestMonth = "January";
+	let lastComputedDistance = -1;
+	for (let i = 0; i < monthRows.length; i++) {
+		let newComputedDistance = Math.abs(pageY - monthRows[i].offsetTop);
+		if (lastComputedDistance == -1 || newComputedDistance < lastComputedDistance) {
+			closestMonth = monthRows[i].getElementsByClassName("monthText")[0].textContent.split(" ")[0];
+			lastComputedDistance = newComputedDistance;
+		}
+	}
+	
+	setSeason(getSeasonFromMonth(getMonthNumber(closestMonth)));
 }
 
 function loadPictures() {
