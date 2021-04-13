@@ -3,12 +3,12 @@
 	font-family: 'Oswald', sans-serif;
 	color: white;
     /* background-image: url("../res/images/animal_crossing/spring_background_01.jpg"); */
-	background-image: url("../res/images/animal_crossing/winter_background_01.jpg"), url("../res/images/animal_crossing/spring_background_01.jpg"),
-						url("../res/images/animal_crossing/summer_background_01.jpg"), url("../res/images/animal_crossing/fall_background_01.jpg");
+	background-image: url("../res/images/animal_crossing/spring_background_01.jpg"), url("../res/images/animal_crossing/summer_background_01.jpg"),
+						url("../res/images/animal_crossing/fall_background_01.jpg"), url("../res/images/animal_crossing/winter_background_01.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	transition: background-image 0.25s ease;
+	transition: background-image 1.0s ease;
 }
 
 .topIcons {
