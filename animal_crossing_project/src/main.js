@@ -79,7 +79,7 @@ function appendPicture(pictureName, pictureDescription) {
 		appendNewDate(year, month, centerColumnDiv);
 	}
 
-	picture.src = "res/images/animal_crossing/" + pictureName + ".jpg";
+	picture.src = "animal_crossing_project/res/images/" + pictureName + ".jpg";
 	imageRowDiv.appendChild(picture);
 	if (pictureDescription != "") {
 		addDescription(pictureDescription, imageRowDiv);
@@ -102,13 +102,13 @@ function setSeason(season) {
 	if (season != currentSeason) {
 		console.log("Set season to " + season);
 		if (season === "Winter") {
-			document.body.style.backgroundImage = "url(res/images/animal_crossing/winter_background_01.jpg)";
+			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/winter_background_01.jpg)";
 		} else if (season === "Fall") {
-			document.body.style.backgroundImage = "url(res/images/animal_crossing/fall_background_01.jpg)";
+			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/fall_background_01.jpg)";
 		} else if (season === "Summer") {
-			document.body.style.backgroundImage = "url(res/images/animal_crossing/summer_background_01.jpg)";
+			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/summer_background_01.jpg)";
 		} else if (season === "Spring") {
-			document.body.style.backgroundImage = "url(res/images/animal_crossing/spring_background_01.jpg)";
+			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/spring_background_01.jpg)";
 		}
 		currentSeason = season;
 	}

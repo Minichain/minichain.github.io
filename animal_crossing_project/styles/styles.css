@@ -1,13 +1,6 @@
 .myBody {
-    /* cursor: url("res/"), auto; */
-	font-family: 'Oswald', sans-serif;
-	color: white;
-    /* background-image: url("../res/images/animal_crossing/spring_background_01.jpg"); */
-	background-image: url("../res/images/animal_crossing/spring_background_01.jpg"), url("../res/images/animal_crossing/summer_background_01.jpg"),
-						url("../res/images/animal_crossing/fall_background_01.jpg"), url("../res/images/animal_crossing/winter_background_01.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-image: url("../../animal_crossing_project/res/images/spring_background_01.jpg"), url("../../animal_crossing_project/res/images/summer_background_01.jpg"),
+						url("../../animal_crossing_project/res/images/fall_background_01.jpg"), url("../../animal_crossing_project/res/images/winter_background_01.jpg");
 	transition: background-image 1.0s ease;
 }
 

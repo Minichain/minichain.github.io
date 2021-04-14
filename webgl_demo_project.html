@@ -4,23 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/inner_project_styles.css">
-    <link rel="stylesheet" href="styles/webgl_demo_project_styles.css">
+    <link rel="stylesheet" href="shared/styles/styles.css">
+    <link rel="stylesheet" href="shared/styles/inner_project_styles.css">
+    <link rel="stylesheet" href="webgl_demo_project/styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap">
-    <link rel="icon" type="image/png" href="res/icons/favicon_01.png" />
+    <link rel="icon" type="image/png" href="shared/res/icons/favicon_01.png" />
     <title>Minichain</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="src/webgl_project/main.js"></script>
-    <script src="src/webgl_project/demo-01.js"></script>
-    <script src="src/webgl_project/demo-02.js"></script>
-    <script src="src/webgl_project/mass.js"></script>
-    <script src="src/webgl_project/coordinates.js"></script>
-    <script src="src/webgl_project/utils.js"></script>
-    <script src="src/webgl_project/web_gl_manager.js"></script>
-</script>
+    <script src="webgl_demo_project/src/main.js"></script>
+    <script src="webgl_demo_project/src/demo-01.js"></script>
+    <script src="webgl_demo_project/src/demo-02.js"></script>
+    <script src="webgl_demo_project/src/mass.js"></script>
+    <script src="webgl_demo_project/src/coordinates.js"></script>
+    <script src="webgl_demo_project/src/utils.js"></script>
+    <script src="webgl_demo_project/src/web_gl_manager.js"></script>
 </head>
 
 <body class="myBody" onresize="onResize()" onload="onLoad()">
@@ -29,31 +27,31 @@
             <div class="githubIconContainer">
                 <a href="https://github.com/Minichain" target="_blank">
                     <div class="githubIconText">Github</div>
-                    <img class="githubIcon" src="res/icons/github_icon_white_100x100.png"></img>
+                    <img class="githubIcon" src="shared/res/icons/github_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="linkedinIconContainer">
                 <a href="https://linkedin.com/in/adria-cadena-rubio" target="_blank">
                     <div class="linkedinIconText">Linkedin</div>
-                    <img class="linkedinIcon" src="res/icons/linkedin_icon_white_100x100.png"></img>
+                    <img class="linkedinIcon" src="shared/res/icons/linkedin_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="myProjectsIconContainer">
                 <a href="https://minichain.es/projects">
                     <div class="myProjectsIconText">Projects</div>
-                    <img class="myProjectsIcon" src="res/icons/dashboard_icon_white_100x100.png"></img>
+                    <img class="myProjectsIcon" src="shared/res/icons/dashboard_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="instagramIconContainer">
                 <a href="https://www.instagram.com/itsminichain" target="_blank">
                     <div class="instagramIconText">Instagram</div>
-                    <img class="instagramIcon" src="res/icons/instagram_icon_white_100x100.png"></img>
+                    <img class="instagramIcon" src="shared/res/icons/instagram_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="twitterIconContainer">
                 <a href="https://twitter.com/ItsMinichain" target="_blank">
                     <div class="twitterIconText">Twitter</div>
-                    <img class="twitterIcon" src="res/icons/twitter_icon_white_100x100.png"></img>
+                    <img class="twitterIcon" src="shared/res/icons/twitter_icon_white_100x100.png"></img>
                 </a>
             </div>
         </div>
@@ -68,28 +66,20 @@
                 <br>
 
                 <canvas id="canvas01"></canvas>
-                <!-- <button type="button" class="btn btn-warning" onclick="demo01.reset()">Reset Canvas</button> -->
 
                 <br><br><br><br>
                 <p>WebGL demo 02</p>
                 <br>
 
                 <canvas id="canvas02" onmousemove="demo02.updateMouseCoords(event)"></canvas>
-                <!-- <button type="button" class="btn btn-warning" onclick="demo02.reset()">Reset Canvas</button> -->
             </div>
         </div>
-
-        <div class="projectPatchNotes">
-            <div class="projectPatchNotesInnerDiv">
-            </div>
-        </div>
-
     </div>
 
     <div class="bottomIcons">
         <div class="backIconContainer">
             <a href="https://minichain.es/projects">
-                <img class="backIcon" src="res/icons/back_icon_white_100x100.png"></img>
+                <img class="backIcon" src="shared/res/icons/back_icon_white_100x100.png"></img>
             </a>
         </div>
     </div>

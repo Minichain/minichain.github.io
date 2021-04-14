@@ -1,15 +1,3 @@
-.myBody {
-    /* cursor: url("src/images/"), auto; */
-    font-family: 'Oswald', sans-serif;
-    color: white;
-    background-color: black;
-    background-image: url("../res/images/background_image_1920x1080_01.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-
 .bannerAndPortrait {
     position: relative;
     height: 350px;
@@ -44,14 +32,6 @@
     max-width:1000px;
     text-align: center;
     font-size: 25px;
-    margin: auto;
-}
-
-.topIcons {
-    position: relative;
-    width: 1000px;
-    height: 95px;
-    max-width: 1000px;
     margin: auto;
 }
 

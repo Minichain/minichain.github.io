@@ -2,6 +2,25 @@
 	/* outline: 1px solid red; */
 }
 
+.myBody {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    background-color: black;
+    background-image: url("../../shared/res/images/background_image_1920x1080_01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.topIcons {
+    position: relative;
+    width: 1000px;
+    height: 95px;
+    max-width: 1000px;
+    margin: auto;
+}
+
 a:link {
     color: rgb(219, 219, 219);
     background-color: transparent;
