@@ -36,7 +36,7 @@
     margin-right: 10px;
 }
 
-.projectImage {
+.projectImageDiv {
     position: relative;
     width: 60%;
     transition: transform .2s;
@@ -48,13 +48,12 @@
     width: 40%;
 }
 
-.elwynnProjectImage, .minichainsPlayerProjectImage, .eversongProjectImage, .webGLProjectImage {
+.projectImage {
     display: block;
     width: 100%;
-    height: auto;
 }
 
-.projectImage:hover {
+.projectImageDiv:hover {
     -ms-transform: scale(1.01); /* IE 9 */
     -webkit-transform: scale(1.01); /* Safari 3-8 */
     transform: scale(1.01); 
@@ -86,11 +85,11 @@
     text-align: center;
 }
 
-.projectImage:hover .projectOverlay {
+.projectImageDiv:hover .projectOverlay {
     opacity: 1.0;
 }
 
-.projectImage:hover .projectOverlayText {
+.projectImageDiv:hover .projectOverlayText {
     filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 1.0));
 }
 
@@ -101,7 +100,7 @@
 }
 
 @media (max-width:600px) {
-    .projectImage {
+    .projectImageDiv {
         width: 100%;
     }
 
