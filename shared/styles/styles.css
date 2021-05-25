@@ -63,7 +63,7 @@ a:active {
     filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
 }
 
-.githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText, .myCurriculumVitaeIconText, .myProjectsIconText, .homeIconText {
+.githubIconText, .linkedinIconText, .instagramIconText, .twitterIconText, .myCurriculumVitaeIconText, .homeIconText {
     color: white;
     font-size: 15px;
     position: absolute;
@@ -71,6 +71,16 @@ a:active {
     opacity: 0;
     transition: .5s ease;
     margin: auto;
+}
+
+.myProjectsIconText {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 105%;
+    opacity: 1;
+    transition: .5s ease;
+    margin: auto; 
 }
 
 .myCurriculumVitaeIconText {
