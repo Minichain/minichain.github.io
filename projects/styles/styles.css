@@ -70,12 +70,12 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #0000003a;
+    background-color: #0000007a;
 }
 
 .projectOverlayText {
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -101,7 +101,8 @@
 
 @media (max-width:1000px) {
     .projectImageDiv {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .project {
