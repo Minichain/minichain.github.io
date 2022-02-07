@@ -1,0 +1,58 @@
+class Spectrum {
+    
+    constructor() {
+        this.samples = new Float32Array(FFT_SIZE);
+    }
+
+    update(timeElapsed) {
+        for (let i = 0; i < FFT_SIZE; i++) {
+            this.samples[i] = this.samples[i] - 0.01;
+        }
+    }
+
+    render() {
+        var vertices = [];
+        var indices = [];
+        for (let i = 0; i < FFT_SIZE; i++) {
+            var width = 0.02;
+            var x = - 1 + i * width;
+            var height = this.samples[i];
+
+            var bottomLeftCorner = [-1 * (width / 2) + x, -1];
+            var topLeftCorner = [-1 * (width / 2) + x, height - 1];
+            var topRightCorner = [(width / 2) + x, height - 1];
+            var bottomRightCorner = [(width / 2) + x, -1];
+ 
+            vertices.push(bottomLeftCorner[0]);
+            vertices.push(bottomLeftCorner[1]);
+            vertices.push(0);
+            indices.push(i * 6 + 0);
+
+            vertices.push(topLeftCorner[0]);
+            vertices.push(topLeftCorner[1]);
+            vertices.push(0);
+            indices.push(i * 6 + 1);
+            
+            vertices.push(bottomRightCorner[0]);
+            vertices.push(bottomRightCorner[1]);
+            vertices.push(0);
+            indices.push(i * 6 + 2);
+
+            vertices.push(topLeftCorner[0]);
+            vertices.push(topLeftCorner[1]);
+            vertices.push(0);
+            indices.push(i * 6 + 3);
+
+            vertices.push(topRightCorner[0]);
+            vertices.push(topRightCorner[1]);
+            vertices.push(0);
+            indices.push(i * 6 + 4);
+
+            vertices.push(bottomRightCorner[0]);
+            vertices.push(bottomRightCorner[1]);
+            vertices.push(0);
+            indices.push(i * 6 + 5);
+        }
+        webGLManager.renderFigure([vertices, indices], "triangles")
+    }
+}
