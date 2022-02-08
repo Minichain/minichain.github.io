@@ -18,10 +18,10 @@ class Spectrum {
             var x = - 1 + i * width;
             var height = this.samples[i];
 
-            var bottomLeftCorner = [-1 * (width / 2) + x, -1];
-            var topLeftCorner = [-1 * (width / 2) + x, height - 1];
-            var topRightCorner = [(width / 2) + x, height - 1];
-            var bottomRightCorner = [(width / 2) + x, -1];
+            var bottomLeftCorner = [x, -1];
+            var topLeftCorner = [x, height - 1];
+            var topRightCorner = [x + width, height - 1];
+            var bottomRightCorner = [x + width, -1];
  
             vertices.push(bottomLeftCorner[0]);
             vertices.push(bottomLeftCorner[1]);

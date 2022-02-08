@@ -13,6 +13,13 @@ var spectrumSamples = new Uint8Array(FFT_SIZE);
 
 function onLoad() {
 	canvas = document.querySelector("#canvas");
+	function setFullscreen() {
+        canvas.requestFullscreen();
+    }
+    canvas.addEventListener("click", setFullscreen);
+    canvas.addEventListener('fullscreenchange', (event) => {
+        updateCanvas(document.fullscreenElement);
+    });
 
 	webGLManager = new WebGLManager(this.canvas);
 	spectrum = new Spectrum();
@@ -44,7 +51,7 @@ function retrieveSamples() {
 	if (audioAnalyser != null) {
 		audioAnalyser.getByteFrequencyData(spectrumSamples);
 		for (let i = 0; i < FFT_SIZE; i++) {
-			spectrum.samples[i] = spectrumSamples[i] / 256.0;
+			spectrum.samples[i] = spectrumSamples[i] / 200.0;
 		}
 		// console.log("AdriLog: samples: " + spectrum.samples);	
 	}
@@ -75,9 +82,14 @@ function render() {
 	spectrum.render();
 }
 
-function updateCanvas() {
-	canvas.width = canvas.parentElement.clientWidth;    // 90% of parent width
-	canvas.height = canvas.width * (9 / 16);
-	canvas.style.width = canvas.width;
-	canvas.style.height = canvas.height;
+function updateCanvas(isFullscreen = false) {
+    if (isFullscreen) {
+        console.log("Canvas is Full Screen!!");
+        canvas.width = screen.availWidth;
+        canvas.height = screen.availHeight;
+    } else {
+        console.log("Canvas isn't Full Screen!!");
+		canvas.width = canvas.parentElement.clientWidth;    // 90% of parent width
+		canvas.height = canvas.width * (9 / 16);
+    }
 }
