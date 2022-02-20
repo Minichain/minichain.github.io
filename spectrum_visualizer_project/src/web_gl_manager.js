@@ -13,7 +13,7 @@ class WebGLManager {
     
     clearCanvas(c) {
         // Clear the canvas
-        this.gl.clearColor(0.1, 0.1, 0.1, 0.01);
+        this.gl.clearColor(0, 0, 0, 1);
         // Clear the color buffer bit
         this.gl.clear(this.gl.COLOR_BUFFER_BIT);
         // Set the view port
@@ -34,7 +34,7 @@ class WebGLManager {
     
         var fragCode =
             'void main(void) {' +
-            '   gl_FragColor = vec4(1.0, 0.9, 0.2, 1.0);' +
+            '   gl_FragColor = vec4(1.0, 0.1, 0, 1.0);' +
             '}';
     
         var fragShader = this.gl.createShader(this.gl.FRAGMENT_SHADER);
@@ -93,6 +93,15 @@ class WebGLManager {
     }
 
     drawTextures(gain) {
-        this.logo.drawTexture(this.gl, 700 + gain, 150 + gain, 25, 100)
+        gain *= 200;
+        var width = (canvas.width + gain) * 0.7;
+        var height = (canvas.height + gain) * 0.3;
+        this.logo.drawTexture(
+            this.gl,
+            width,
+            height,
+            (canvas.width - canvas.width / 2) - width / 2,
+            (canvas.height - canvas.height / 2) - height / 2
+        )
     }
 }
