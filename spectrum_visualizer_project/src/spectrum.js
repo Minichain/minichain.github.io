@@ -2,6 +2,9 @@ class Spectrum {
     
     constructor() {
         this.samples = new Float32Array(FFT_SIZE);
+        this.logo = new Image();
+        this.logo.crossOrigin = "anonymous";
+        this.logo.src = "spectrum_visualizer_project/res/images/o_800px.png";
     }
 
     update(timeElapsed) {
@@ -54,5 +57,6 @@ class Spectrum {
             indices.push(i * 6 + 5);
         }
         webGLManager.renderFigure([vertices, indices], "triangles")
+        webGLManager.drawImage(700, 150, 0, 0)
     }
 }
