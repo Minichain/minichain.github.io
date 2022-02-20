@@ -8,8 +8,7 @@ class WebGLManager {
             alert('Unable to initialize Webgl. Your browser or machine may not support it.');
             return;
         }
-
-        this.loadTextures()
+        this.logo = new LogoTexture(this.gl, 'spectrum_visualizer_project/res/images/logo_def_blanco_1200px.png')
     }
     
     clearCanvas(c) {
@@ -93,109 +92,7 @@ class WebGLManager {
         }
     }
 
-    loadTextures() {
-        // setup GLSL program
-        this.textureShader = webglUtils.createProgramFromScripts(this.gl, ["drawImage-vertex-shader", "drawImage-fragment-shader"]);
-
-        // look up where the vertex data needs to go.
-        this.texturePositionLocation = this.gl.getAttribLocation(this.textureShader, "a_position");
-        this.texcoordLocation = this.gl.getAttribLocation(this.textureShader, "a_texcoord");
-
-        // lookup uniforms
-        this.matrixLocation = this.gl.getUniformLocation(this.textureShader, "u_matrix");
-        this.textureLocation = this.gl.getUniformLocation(this.textureShader, "u_texture");
-
-        // Create a buffer.
-        this.texturePositionBuffer = this.gl.createBuffer();
-        this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.texturePositionBuffer);
-
-        // Put a unit quad in the buffer
-        var positions = [
-            0, 0,
-            0, 1,
-            1, 0,
-            1, 0,
-            0, 1,
-            1, 1,
-        ];
-        this.gl.bufferData(this.gl.ARRAY_BUFFER, new Float32Array(positions), this.gl.STATIC_DRAW);
-
-        // Create a buffer for texture coords
-        this.texcoordBuffer = this.gl.createBuffer();
-        this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.texcoordBuffer);
-
-        // Put texcoords in the buffer
-        var texcoords = [
-            0, 0,
-            0, 1,
-            1, 0,
-            1, 0,
-            0, 1,
-            1, 1,
-        ];
-        this.gl.bufferData(this.gl.ARRAY_BUFFER, new Float32Array(texcoords), this.gl.STATIC_DRAW);
-        var tex = this.gl.createTexture();
-        this.gl.bindTexture(this.gl.TEXTURE_2D, tex);
-        // Fill the texture with a 1x1 blue pixel.
-        this.gl.texImage2D(this.gl.TEXTURE_2D, 0, this.gl.RGBA, 1, 1, 0, this.gl.RGBA, this.gl.UNSIGNED_BYTE,
-                        new Uint8Array([0, 0, 255, 255]));
-
-        // let's assume all images are not a power of 2
-        this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_WRAP_S, this.gl.CLAMP_TO_EDGE);
-        this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_WRAP_T, this.gl.CLAMP_TO_EDGE);
-        this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MIN_FILTER, this.gl.LINEAR);
-
-        this.textureInfo = {
-            width: 1,   // we don't know the size until it loads
-            height: 1,
-            texture: tex
-        };
-        var img = new Image();
-        img.src = 'spectrum_visualizer_project/res/images/logo_def_blanco_1200px.png';
-        img.onload = () => {
-            console.log("AdriLog: this.textureInfo: " + this.textureInfo)
-            console.log("AdriLog: img.width: " + img.width)
-            this.textureInfo.width = img.width;
-            this.textureInfo.height = img.height;
-    
-            this.gl.bindTexture(this.gl.TEXTURE_2D, this.textureInfo.texture);
-            this.gl.texImage2D(this.gl.TEXTURE_2D, 0, this.gl.RGBA, this.gl.RGBA, this.gl.UNSIGNED_BYTE, img);
-        }
-    }
-
-    // Unlike images, textures do not have a width and height associated
-    // with them so we'll pass in the width and height of the texture
-    drawImage(texWidth, texHeight, dstX, dstY) {
-        this.gl.bindTexture(this.gl.TEXTURE_2D, this.textureInfo.texture);
-
-        // Tell WebGL to use our shader program pair
-        this.gl.useProgram(this.textureShader);
-
-        // Setup the attributes to pull data from our buffers
-        this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.texturePositionBuffer);
-        this.gl.enableVertexAttribArray(this.texturePositionLocation);
-        this.gl.vertexAttribPointer(this.texturePositionLocation, 2, this.gl.FLOAT, false, 0, 0);
-        this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.texcoordBuffer);
-        this.gl.enableVertexAttribArray(this.texcoordLocation);
-        this.gl.vertexAttribPointer(this.texcoordLocation, 2, this.gl.FLOAT, false, 0, 0);
-
-        // this matrix will convert from pixels to clip space
-        var matrix = m4.orthographic(0, this.gl.canvas.width, this.gl.canvas.height, 0, -1, 1);
-
-        // this matrix will translate our quad to dstX, dstY
-        matrix = m4.translate(matrix, dstX, dstY, 0);
-
-        // this matrix will scale our 1 unit quad
-        // from 1 unit to texWidth, texHeight units
-        matrix = m4.scale(matrix, texWidth, texHeight, 1);
-
-        // Set the matrix.
-        this.gl.uniformMatrix4fv(this.matrixLocation, false, matrix);
-
-        // Tell the shader to get the texture from texture unit 0
-        this.gl.uniform1i(this.textureLocation, 0);
-
-        // draw the quad (2 triangles, 6 vertices)
-        this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+    drawTextures(gain) {
+        this.logo.drawTexture(this.gl, 700 + gain, 150 + gain, 25, 100)
     }
 }

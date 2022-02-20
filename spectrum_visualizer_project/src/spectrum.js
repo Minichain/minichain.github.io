@@ -2,9 +2,6 @@ class Spectrum {
     
     constructor() {
         this.samples = new Float32Array(FFT_SIZE);
-        this.logo = new Image();
-        this.logo.crossOrigin = "anonymous";
-        this.logo.src = "spectrum_visualizer_project/res/images/o_800px.png";
     }
 
     update(timeElapsed) {
@@ -16,6 +13,7 @@ class Spectrum {
     render() {
         var vertices = [];
         var indices = [];
+        var averageGain = 0;
         for (let i = 0; i < FFT_SIZE; i++) {
             var width = 0.02;
             var x = - 1 + i * width;
@@ -55,8 +53,10 @@ class Spectrum {
             vertices.push(bottomRightCorner[1]);
             vertices.push(0);
             indices.push(i * 6 + 5);
+
+            averageGain += this.samples[i];
         }
-        webGLManager.renderFigure([vertices, indices], "triangles")
-        webGLManager.drawImage(700, 150, 0, 0)
+        webGLManager.drawTextures(averageGain / FFT_SIZE * 100);
+        webGLManager.renderFigure([vertices, indices], "triangles");
     }
 }
