@@ -9,6 +9,7 @@ class WebGLManager {
             return;
         }
         this.logo = new LogoTexture(this.gl, 'spectrum_visualizer_project/res/images/logo_def_blanco_1200px.png')
+        this.background = new LogoTexture(this.gl, 'spectrum_visualizer_project/res/images/background_02.jpg')
     }
     
     clearCanvas(c) {
@@ -23,7 +24,7 @@ class WebGLManager {
     loadShader01(vertex_buffer, index_Buffer) {
         var vertCode =
             'attribute vec3 coordinates;' +
-            'void main(void) {' +
+            'void main() {' +
             '   gl_Position = vec4(coordinates, 1.0);' +
             '}';
     
@@ -33,8 +34,8 @@ class WebGLManager {
         this.gl.compileShader(vertShader);
     
         var fragCode =
-            'void main(void) {' +
-            '   gl_FragColor = vec4(1.0, 0.1, 0, 1.0);' +
+            'void main() {' +
+            '   gl_FragColor = vec4(1.0, 0.0, 0.01, 1.0);' +
             '}';
     
         var fragShader = this.gl.createShader(this.gl.FRAGMENT_SHADER);
@@ -92,8 +93,21 @@ class WebGLManager {
         }
     }
 
-    drawTextures(gain) {
-        gain *= 200;
+    renderBackground(gain) {
+        gain *= 50;
+        var width = (canvas.width + gain);
+        var height = (canvas.height + gain);
+        this.background.drawTexture(
+            this.gl,
+            width,
+            height,
+            (canvas.width - canvas.width / 2) - width / 2,
+            (canvas.height - canvas.height / 2) - height / 2
+        )
+    }
+
+    renderLogo(gain) {
+        gain *= 400;
         var width = (canvas.width + gain) * 0.7;
         var height = (canvas.height + gain) * 0.3;
         this.logo.drawTexture(

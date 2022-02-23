@@ -54,9 +54,10 @@ class Spectrum {
             vertices.push(0);
             indices.push(i * 6 + 5);
 
-            averageGain += this.samples[i];
+            averageGain += (this.samples[i] * ((FFT_SIZE - i) / FFT_SIZE));
         }
+        webGLManager.renderBackground(averageGain / FFT_SIZE);
         webGLManager.renderFigure([vertices, indices], "triangles");
-        webGLManager.drawTextures(averageGain / FFT_SIZE);
+        webGLManager.renderLogo(averageGain / FFT_SIZE);
     }
 }
