@@ -1,4 +1,4 @@
-class LogoTexture {
+class Texture {
 
     constructor(gl, url) {
         this.url = url;
@@ -6,7 +6,7 @@ class LogoTexture {
     }
 
     loadTexture(gl) {
-        this.textureShader = webglUtils.createProgramFromScripts(gl, ["drawImage-vertex-shader", "drawImage-fragment-shader"]);
+        this.textureShader = webglUtils.createProgramFromScripts(gl, ["drawImage-vertex-shader02", "drawImage-fragment-shader02"]);
 
         // look up where the vertex data needs to go.
         this.texturePositionLocation = gl.getAttribLocation(this.textureShader, "a_position");
@@ -74,9 +74,6 @@ class LogoTexture {
     // Unlike images, textures do not have a width and height associated
     // with them so we'll pass in the width and height of the texture
     drawTexture(gl, texWidth, texHeight, dstX, dstY) {
-        gl.enable(gl.BLEND);
-        gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-
         gl.bindTexture(gl.TEXTURE_2D, this.textureInfo.texture);
 
         // Tell WebGL to use our shader program pair

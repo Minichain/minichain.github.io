@@ -51,9 +51,11 @@ function retrieveSamples() {
 	if (audioAnalyser != null) {
 		audioAnalyser.getByteFrequencyData(spectrumSamples);
 		for (let i = 0; i < FFT_SIZE; i++) {
-			spectrum.samples[i] = spectrumSamples[i] / 200.0;
+			var newValue = spectrumSamples[i] / 200.0;
+			if (spectrum.samples[i] <= newValue) {
+				spectrum.samples[i] = newValue;
+			}
 		}
-		// console.log("AdriLog: samples: " + spectrum.samples);	
 	}
 	setTimeout(retrieveSamples, 0);
 }

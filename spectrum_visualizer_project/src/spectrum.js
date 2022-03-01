@@ -6,7 +6,7 @@ class Spectrum {
 
     update(timeElapsed) {
         for (let i = 0; i < FFT_SIZE; i++) {
-            this.samples[i] = this.samples[i] - 0.01;
+            this.samples[i] = this.samples[i] - 0.015;
         }
     }
 

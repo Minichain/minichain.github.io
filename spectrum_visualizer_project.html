@@ -15,11 +15,22 @@
     <script src="spectrum_visualizer_project/src/main.js"></script>
     <script src="spectrum_visualizer_project/src/spectrum.js"></script>
     <script src="spectrum_visualizer_project/src/web_gl_manager.js"></script>
-    <script src="spectrum_visualizer_project/src/logo_texture.js"></script>
+    <script src="spectrum_visualizer_project/src/texture.js"></script>
     <script src="https://webgl2fundamentals.org/webgl/resources/webgl-utils.js"></script>
     <script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
 
-    <script  id="drawImage-vertex-shader" type="x-shader/x-vertex">
+    <script  id="drawImage-vertex-shader01" type="x-shader/x-vertex">
+        attribute vec3 coordinates;
+        void main() {
+            gl_Position = vec4(coordinates, 1.0);
+        }
+    </script>
+    <script  id="drawImage-fragment-shader01" type="x-shader/x-fragment">
+        void main() {
+            gl_FragColor = vec4(1.0, 0.0, 0.01, 1.0 - (gl_FragCoord.y / 300.0));
+        }
+    </script>
+    <script  id="drawImage-vertex-shader02" type="x-shader/x-vertex">
         attribute vec4 a_position;
         attribute vec2 a_texcoord;
         
@@ -32,7 +43,7 @@
            v_texcoord = a_texcoord;
         }
     </script>
-    <script  id="drawImage-fragment-shader" type="x-shader/x-fragment">
+    <script  id="drawImage-fragment-shader02" type="x-shader/x-fragment">
         precision mediump float;
         
         varying vec2 v_texcoord;

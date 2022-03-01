@@ -8,8 +8,8 @@ class WebGLManager {
             alert('Unable to initialize Webgl. Your browser or machine may not support it.');
             return;
         }
-        this.logo = new LogoTexture(this.gl, 'spectrum_visualizer_project/res/images/logo_def_blanco_1200px.png')
-        this.background = new LogoTexture(this.gl, 'spectrum_visualizer_project/res/images/background_02.jpg')
+        this.logo = new Texture(this.gl, 'spectrum_visualizer_project/res/images/logo_def_blanco_1200px.png')
+        this.background = new Texture(this.gl, 'spectrum_visualizer_project/res/images/background_02.jpg')
     }
     
     clearCanvas(c) {
@@ -19,34 +19,14 @@ class WebGLManager {
         this.gl.clear(this.gl.COLOR_BUFFER_BIT);
         // Set the view port
         this.gl.viewport(0, 0, c.width, c.height);
+
+        this.gl.enable(this.gl.BLEND);
+        this.gl.blendFunc(this.gl.SRC_ALPHA, this.gl.ONE_MINUS_SRC_ALPHA);
     }
     
     loadShader01(vertex_buffer, index_Buffer) {
-        var vertCode =
-            'attribute vec3 coordinates;' +
-            'void main() {' +
-            '   gl_Position = vec4(coordinates, 1.0);' +
-            '}';
+        var shaderProgram = webglUtils.createProgramFromScripts(this.gl, ["drawImage-vertex-shader01", "drawImage-fragment-shader01"]);
     
-        var vertShader = this.gl.createShader(this.gl.VERTEX_SHADER);
-    
-        this.gl.shaderSource(vertShader, vertCode);
-        this.gl.compileShader(vertShader);
-    
-        var fragCode =
-            'void main() {' +
-            '   gl_FragColor = vec4(1.0, 0.0, 0.01, 1.0);' +
-            '}';
-    
-        var fragShader = this.gl.createShader(this.gl.FRAGMENT_SHADER);
-    
-        this.gl.shaderSource(fragShader, fragCode); 
-        this.gl.compileShader(fragShader);
-    
-        var shaderProgram = this.gl.createProgram();
-        
-        this.gl.attachShader(shaderProgram, vertShader);
-        this.gl.attachShader(shaderProgram, fragShader);
         this.gl.linkProgram(shaderProgram);
         this.gl.useProgram(shaderProgram);
     
@@ -94,7 +74,7 @@ class WebGLManager {
     }
 
     renderBackground(gain) {
-        gain *= 50;
+        gain *= 75;
         var width = (canvas.width + gain);
         var height = (canvas.height + gain);
         this.background.drawTexture(
@@ -107,7 +87,7 @@ class WebGLManager {
     }
 
     renderLogo(gain) {
-        gain *= 400;
+        gain *= 500;
         var width = (canvas.width + gain) * 0.7;
         var height = (canvas.height + gain) * 0.3;
         this.logo.drawTexture(
