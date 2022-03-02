@@ -27,7 +27,7 @@
     </script>
     <script  id="drawImage-fragment-shader01" type="x-shader/x-fragment">
         void main() {
-            gl_FragColor = vec4(1.0, 0.0, 0.01, 1.0 - (gl_FragCoord.y / 300.0));
+            gl_FragColor = vec4(1.0 - (gl_FragCoord.y / 500.0), 0.1 - (gl_FragCoord.y / 100.0), 0.01, 1.0);
         }
     </script>
     <script  id="drawImage-vertex-shader02" type="x-shader/x-vertex">
