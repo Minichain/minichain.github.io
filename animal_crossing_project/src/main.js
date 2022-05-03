@@ -67,6 +67,10 @@ function loadPictures() {
 	}
 }
 
+var counter = 0;
+var age = 25;
+var codeDisplayed = false;
+
 function appendPicture(pictureName, pictureDescription) {
 	console.log("Append picture: " + pictureName);
 	let centerColumnDiv = document.getElementsByClassName("centerColumn")[0];
@@ -87,6 +91,18 @@ function appendPicture(pictureName, pictureDescription) {
 		addDescription(pictureDescription, imageRowDiv);
 	}
     centerColumnDiv.appendChild(imageRowDiv);
+
+	//Easter egg Zaroti's Birthday
+	if (pictureName == "2020_05_13_01") {
+		imageRowDiv.addEventListener("click", function() {
+			console.log("Easter egg");
+			counter++;
+			if (counter >= age && !codeDisplayed) {
+				addDescription("T7EFQ-GG7XD-368PT", imageRowDiv);
+				codeDisplayed = true;
+			}
+		});
+	}
 }
 
 function appendNewDate(year, month, centerColumnDiv) {
