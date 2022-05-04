@@ -1,6 +1,7 @@
 var pictures = [
 	["2020_03_24_01", ""], ["2020_03_24_02", ""], ["2020_03_24_03", "La primera vez que Minichain visita la isla de Sakura"],
 	["2020_03_29_01", ""], ["2020_04_07_01", ""], ["2020_04_19_01", ""], ["2020_04_19_02", ""],
+	["2020_05_04_01", ""],
 	["2020_05_13_01", ""], ["2020_05_13_02", ""], ["2020_05_13_03", ""], ["2020_05_13_04", ""],
 	["2020_05_13_05", ""], ["2020_05_14_01", ""], ["2020_05_14_02", ""], ["2020_05_14_03", ""],
 	["2020_05_23_01", ""], ["2020_05_23_02", ""], ["2020_05_23_03", ""], ["2020_05_23_04", ""],
@@ -70,6 +71,9 @@ function loadPictures() {
 var counter = 0;
 var age = 25;
 var codeDisplayed = false;
+var xxxxx = "T6EFQ";
+var yyyyy = "GG6XD";
+var zzzzz = "??7PT";
 
 function appendPicture(pictureName, pictureDescription) {
 	console.log("Append picture: " + pictureName);
@@ -93,12 +97,12 @@ function appendPicture(pictureName, pictureDescription) {
     centerColumnDiv.appendChild(imageRowDiv);
 
 	//Easter egg Zaroti's Birthday
-	if (pictureName == "2020_05_13_01") {
+	if (pictureName == "2020_05_04_01") {
 		imageRowDiv.addEventListener("click", function() {
 			console.log("Easter egg");
 			counter++;
 			if (counter >= age && !codeDisplayed) {
-				addDescription("T7EFQ-GG7XD-368PT", imageRowDiv);
+				addDescription(xxxxx + "-" + yyyyy + "-" + zzzzz, imageRowDiv);
 				codeDisplayed = true;
 			}
 		});
