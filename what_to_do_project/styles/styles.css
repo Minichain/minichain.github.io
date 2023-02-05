@@ -1,0 +1,56 @@
+.div01 {
+	text-align: center;
+}
+
+.buttonIndoors {
+  background-color: #0079C2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+	font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+	border-radius: 8px;
+}
+
+.buttonIndoors:hover {
+  background-color: #006CAE;
+}
+
+.buttonOutdoors {
+  background-color: #019A66;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+	font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+	border-radius: 8px;
+}
+
+.buttonOutdoors:hover {
+	background-color: #008A5B;
+}
+
+#whatCanIDo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 32px;
+}
+
+#whatToDo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+
+#pastPlans {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}

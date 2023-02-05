@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="what_to_do_project/src/main.js"></script>
+	<link rel="stylesheet" href="what_to_do_project/styles/styles.css">
+	<title>What to do</title>
+</head>
+
+<body class="myBody" onload="onLoad()" onresize="onResize()">
+    <div class="bottomIcons">
+        <div class="backIconContainer">
+            <a href="projects.html">
+                <img class="backIcon" src="shared/res/icons/back_icon_black_100x100.png"></img>
+            </a>
+        </div>
+    </div>
+
+	<div class="div01">
+		<p id="whatCanIDo"><b>What can I do?</b></p>
+		<button class="buttonIndoors" onclick="whatToDoIndoors()">Indoors</button>
+		<button class="buttonOutdoors" onclick="whatToDoOutdoors()">Outdoors</button>
+		<p id="whatToDo"></p>
+		<p id="pastPlans"></p>
+	</div>
+</body>
+
+</html>
