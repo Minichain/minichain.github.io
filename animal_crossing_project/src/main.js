@@ -129,9 +129,118 @@ function appendPicture(pictureName, pictureDescription) {
 	picture.src = "animal_crossing_project/res/images/" + pictureName + ".jpg";
 	imageRowDiv.appendChild(picture);
 	if (pictureDescription != "") {
-		addDescription(pictureDescription, imageRowDiv);
+		addOrUpdateDescription(pictureDescription, imageRowDiv);
 	}
     centerColumnDiv.appendChild(imageRowDiv);
+
+	if (pictureName == "2020_03_24_03") easterEgg01(imageRowDiv);
+	if (pictureName == "2020_08_14_01") easterEgg02(imageRowDiv);
+	if (pictureName == "2020_07_15_01") easterEgg03(imageRowDiv);
+	if (pictureName == "2021_02_15_01") easterEgg04(imageRowDiv);
+}
+
+var objectiveEasterEgg01 = 26;
+function easterEgg01(imageRowDiv) {
+	let counter = 0;
+	let textDisplayed = false;
+	let code = "T6EFQ-GG6XD-??7PT";
+	let textToDisplay = "Regalito: " + code + " | Siguiente pista: Estrellas fugaces";
+	imageRowDiv.addEventListener("click", function() {
+		counter++;
+		if (counter >= objectiveEasterEgg01) {
+			if (!textDisplayed) {
+				addOrUpdateDescription(textToDisplay, imageRowDiv);
+				updatePicture("animal_crossing_project/res/images/easter_egg_01.jpg", imageRowDiv)
+				textDisplayed = true;
+			}
+		} else if (counter > 0) {
+			addOrUpdateDescription(objectiveEasterEgg01 - counter, imageRowDiv);
+		}
+	});
+}
+
+var objectiveEasterEgg02 = 50;
+function easterEgg02(imageRowDiv) {
+	let counter = 0;
+	let codeDisplayed = false;
+	imageRowDiv.addEventListener("click", function() {
+		counter++;
+		if (counter >= objectiveEasterEgg02) {
+			if (!codeDisplayed) {
+				addOrUpdateDescription("Vamos a ver Suzume! | Siguiente pista: Nos comunicamos con Sauron", imageRowDiv);
+				updatePicture("animal_crossing_project/res/images/easter_egg_02_03.jpg", imageRowDiv)
+				codeDisplayed = true;
+			}
+		} else if (counter > 0) {
+			addOrUpdateDescription(objectiveEasterEgg02 - counter, imageRowDiv);
+			if (counter == 10) {
+				updatePicture("animal_crossing_project/res/images/easter_egg_02_01.jpg", imageRowDiv)
+			} else if (counter == 25) {
+				updatePicture("animal_crossing_project/res/images/easter_egg_02_02.jpg", imageRowDiv)
+			}
+		}
+	});
+}
+
+var objectiveEasterEgg03 = 100;
+function easterEgg03(imageRowDiv) {
+	let counter = 0;
+	let codeDisplayed = false;
+	let code = "T6EFQ-GG6XD-??7PT";
+	imageRowDiv.addEventListener("click", function() {
+		counter++;
+		if (counter >= objectiveEasterEgg03) {
+			if (!codeDisplayed) {
+				addOrUpdateDescription("Regalito! (Mira Steam hehe) | Siguiente pista: Festivaaaaal!!", imageRowDiv);
+				updatePicture("animal_crossing_project/res/images/easter_egg_03_03.jpg", imageRowDiv)
+				codeDisplayed = true;
+			}
+		} else if (counter == (objectiveEasterEgg03 / 4)) {
+			addOrUpdateDescription("Ya casi está!", imageRowDiv);
+			updatePicture("animal_crossing_project/res/images/easter_egg_03_01.jpg", imageRowDiv)
+		} else if (counter == (objectiveEasterEgg03 / 2)) {
+			addOrUpdateDescription("Un poco más...", imageRowDiv);
+			updatePicture("animal_crossing_project/res/images/easter_egg_03_02.jpg", imageRowDiv)
+		} else if (counter > (objectiveEasterEgg03 / 4) * 3) {
+			addOrUpdateDescription(objectiveEasterEgg03 - counter, imageRowDiv);
+		} else if (counter == 1) {
+			addOrUpdateDescription("Sigue haciendo click", imageRowDiv);
+		}
+	});
+}
+
+var objectiveEasterEgg04 = 200;
+function easterEgg04(imageRowDiv) {
+	let counter = 0;
+	let codeDisplayed = false;
+	imageRowDiv.addEventListener("click", function() {
+		counter++;
+		if (counter >= objectiveEasterEgg04) {
+			if (!codeDisplayed) {
+				addOrUpdateDescription("Nos vamos a París!", imageRowDiv);
+				updatePicture("animal_crossing_project/res/images/easter_egg_04_05.jpg", imageRowDiv)
+				codeDisplayed = true;
+			}
+		} else if (counter == 25) {
+			addOrUpdateDescription("Ya casi está!", imageRowDiv);
+			updatePicture("animal_crossing_project/res/images/easter_egg_04_01.jpg", imageRowDiv)
+		} else if (counter == 50) {
+			addOrUpdateDescription("Un poco más...", imageRowDiv);
+			updatePicture("animal_crossing_project/res/images/easter_egg_04_02.jpg", imageRowDiv)
+		} else if (counter == 75) {
+			addOrUpdateDescription("Este es un pelín más complicao", imageRowDiv);
+		} else if (counter == 100) {
+			addOrUpdateDescription("UwU", imageRowDiv);
+			updatePicture("animal_crossing_project/res/images/easter_egg_04_03.jpg", imageRowDiv)
+		} else if (counter == 125) {
+			addOrUpdateDescription("UwUn poco más", imageRowDiv);
+			updatePicture("animal_crossing_project/res/images/easter_egg_04_04.jpg", imageRowDiv)
+		} else if (counter > 150) {
+			addOrUpdateDescription(objectiveEasterEgg04 - counter, imageRowDiv);
+		} else if (counter == 1) {
+			addOrUpdateDescription("Sigue haciendo click", imageRowDiv);
+		}
+	});
 }
 
 function appendNewDate(year, month, centerColumnDiv) {
@@ -161,14 +270,25 @@ function setSeason(season) {
 	}
 }
 
-function addDescription(pictureDescription, imageRowDiv) {
+function addOrUpdateDescription(pictureDescription, imageRowDiv) {
 	console.log("Add description: " + pictureDescription);
-	let imageDescriptionDiv = document.createElement("div");
-	imageDescriptionDiv.className = "imageDescription";
-	let description = document.createElement("h2");
-	description.textContent = pictureDescription;
-	imageDescriptionDiv.appendChild(description);
-	imageRowDiv.appendChild(imageDescriptionDiv);
+	let imageDescriptionDiv = imageRowDiv.querySelector("div");
+	if (imageDescriptionDiv) {
+		let description = imageDescriptionDiv.querySelector("h2");
+		description.textContent = pictureDescription;
+	} else {
+		imageDescriptionDiv = document.createElement("div");
+		imageDescriptionDiv.className = "imageDescription";
+		let description = document.createElement("h2");
+		description.textContent = pictureDescription;
+		imageDescriptionDiv.appendChild(description);
+		imageRowDiv.appendChild(imageDescriptionDiv);
+	}
+}
+
+function updatePicture(newPicturePath, imageRowDiv) {
+	let imageDiv = imageRowDiv.querySelector("img");
+	imageDiv.src = newPicturePath;
 }
 
 function onResize() {
