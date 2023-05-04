@@ -143,8 +143,10 @@ var objectiveEasterEgg01 = 26;
 function easterEgg01(imageRowDiv) {
 	let counter = 0;
 	let textDisplayed = false;
-	let code = "T6EFQ-GG6XD-??7PT";
-	let textToDisplay = "Regalito: " + code + " | Siguiente pista: Estrellas fugaces";
+	let codeX = "Q5YI9";
+	let codeY = "9EF80";
+	let codeZ = "F8NDM";
+	let textToDisplay = "Regalito: " + codeX + "-" + codeY + "-" + codeZ + " | Siguiente pista: Estrellas fugaces";
 	imageRowDiv.addEventListener("click", function() {
 		counter++;
 		if (counter >= objectiveEasterEgg01) {
