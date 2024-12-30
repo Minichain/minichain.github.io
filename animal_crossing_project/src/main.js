@@ -1,11 +1,7 @@
 var pictures = [
 	["2020_03_24_01", ""],
-	["2020_03_24_02", ""],
-	["2020_03_24_03", "La primera vez que Minichain visita la isla de Sakura"],
-	["2020_03_29_01", ""],
-	["2020_04_07_01", ""],
+	["2020_03_24_02", "La primera vez que Minichain visita la isla de Sakura"],
 	["2020_04_19_01", ""],
-	["2020_04_19_02", ""],
 	["2020_05_13_01", ""],
 	["2020_05_13_02", ""],
 	["2020_05_13_03", ""],
@@ -13,10 +9,8 @@ var pictures = [
 	["2020_05_13_05", ""],
 	["2020_05_14_01", ""],
 	["2020_05_14_02", ""],
-	["2020_05_14_03", ""],
 	["2020_05_23_01", ""],
 	["2020_05_23_02", ""],
-	["2020_05_23_03", ""],
 	["2020_05_23_04", ""],
 	["2020_07_00_01", ""],
 	["2020_07_15_01", "Usando el Palantir para comunicarnos con Sauron"],
@@ -27,9 +21,8 @@ var pictures = [
 	["2020_08_02_01", ""],
 	["2020_08_02_02", ""],
 	["2020_08_14_01", "Estrellitas fugaces"], 
-	["2020_08_23_01", ""],
-	["2020_08_23_02", "Qué monos estamos!"], 
-	["2020_08_23_03", "Qué monos estamos! Parte 2"],
+	["2020_08_23_01", "Qué monos estamos!"], 
+	["2020_08_23_02", "Qué monos estamos! Parte 2"],
 	["2020_08_00_01", ""],
 	["2020_09_02_01", ""],
 	["2020_10_00_01", "Happy Halloween!"],
@@ -43,8 +36,6 @@ var pictures = [
 	["2020_12_00_06", ""],
 	["2020_12_00_07", ""],
 	["2020_12_00_08", ""],
-	["2020_12_00_09", ""],
-	["2020_12_00_10", ""],
 	["2020_12_03_01", ""],
 	["2020_12_11_01", ""], 			
 	["2020_12_22_01", ""],
@@ -52,7 +43,6 @@ var pictures = [
 	["2021_01_01_02", "Happy New Year!"],
 	["2021_02_14_01", "Carnavaaaal!!"],
 	["2021_02_00_01", "A bailar!!"],
-	["2021_02_00_02", ""],
 	["2021_02_15_01", ""],
 	["2021_02_26_01", ""],
 	["2021_03_03_01", ""],
@@ -60,7 +50,9 @@ var pictures = [
 	["2021_03_03_03", ""],
 	["2021_11_25_01", ""],
 	["2021_11_25_02", ""],
-	["2021_11_25_03", ""]
+	["2021_11_25_03", ""],
+	["2024_12_03_01", ""],
+	["2024_12_03_02", ""]
 ];
 
 var lastPictureAppended;
@@ -133,25 +125,19 @@ function appendPicture(pictureName, pictureDescription) {
 	}
     centerColumnDiv.appendChild(imageRowDiv);
 
-	if (pictureName == "2020_03_24_03") easterEgg01(imageRowDiv);
-	if (pictureName == "2020_08_14_01") easterEgg02(imageRowDiv);
-	if (pictureName == "2020_07_15_01") easterEgg03(imageRowDiv);
-	if (pictureName == "2021_02_15_01") easterEgg04(imageRowDiv);
+	if (pictureName == "2024_12_03_01") easterEgg01(imageRowDiv);
+	if (pictureName == "2024_12_03_02") easterEgg02(imageRowDiv);
 }
 
-var objectiveEasterEgg01 = 26;
+var objectiveEasterEgg01 = 25;
 function easterEgg01(imageRowDiv) {
 	let counter = 0;
 	let textDisplayed = false;
-	let codeX = "Q5YI9";
-	let codeY = "9EF80";
-	let codeZ = "F8NDM";
-	let textToDisplay = "Regalito: " + codeX + "-" + codeY + "-" + codeZ + " | Siguiente pista: Estrellas fugaces";
 	imageRowDiv.addEventListener("click", function() {
 		counter++;
 		if (counter >= objectiveEasterEgg01) {
 			if (!textDisplayed) {
-				addOrUpdateDescription(textToDisplay, imageRowDiv);
+				addOrUpdateDescription("House Flipper 2", imageRowDiv);
 				updatePicture("animal_crossing_project/res/images/easter_egg_01.jpg", imageRowDiv)
 				textDisplayed = true;
 			}
@@ -161,86 +147,20 @@ function easterEgg01(imageRowDiv) {
 	});
 }
 
-var objectiveEasterEgg02 = 50;
+var objectiveEasterEgg02 = 25;
 function easterEgg02(imageRowDiv) {
 	let counter = 0;
-	let codeDisplayed = false;
+	let textDisplayed = false;
 	imageRowDiv.addEventListener("click", function() {
 		counter++;
 		if (counter >= objectiveEasterEgg02) {
-			if (!codeDisplayed) {
-				addOrUpdateDescription("Vamos a ver Suzume! | Siguiente pista: Nos comunicamos con Sauron", imageRowDiv);
-				updatePicture("animal_crossing_project/res/images/easter_egg_02_03.jpg", imageRowDiv)
-				codeDisplayed = true;
+			if (!textDisplayed) {
+				addOrUpdateDescription("80€ en ropita o calzado", imageRowDiv);
+				updatePicture("animal_crossing_project/res/images/easter_egg_02.jpg", imageRowDiv)
+				textDisplayed = true;
 			}
 		} else if (counter > 0) {
 			addOrUpdateDescription(objectiveEasterEgg02 - counter, imageRowDiv);
-			if (counter == 10) {
-				updatePicture("animal_crossing_project/res/images/easter_egg_02_01.jpg", imageRowDiv)
-			} else if (counter == 25) {
-				updatePicture("animal_crossing_project/res/images/easter_egg_02_02.jpg", imageRowDiv)
-			}
-		}
-	});
-}
-
-var objectiveEasterEgg03 = 100;
-function easterEgg03(imageRowDiv) {
-	let counter = 0;
-	let codeDisplayed = false;
-	let code = "T6EFQ-GG6XD-??7PT";
-	imageRowDiv.addEventListener("click", function() {
-		counter++;
-		if (counter >= objectiveEasterEgg03) {
-			if (!codeDisplayed) {
-				addOrUpdateDescription("Regalito! (Mira Steam hehe) | Siguiente pista: Festivaaaaal!!", imageRowDiv);
-				updatePicture("animal_crossing_project/res/images/easter_egg_03_03.jpg", imageRowDiv)
-				codeDisplayed = true;
-			}
-		} else if (counter == (objectiveEasterEgg03 / 4)) {
-			addOrUpdateDescription("Ya casi está!", imageRowDiv);
-			updatePicture("animal_crossing_project/res/images/easter_egg_03_01.jpg", imageRowDiv)
-		} else if (counter == (objectiveEasterEgg03 / 2)) {
-			addOrUpdateDescription("Un poco más...", imageRowDiv);
-			updatePicture("animal_crossing_project/res/images/easter_egg_03_02.jpg", imageRowDiv)
-		} else if (counter > (objectiveEasterEgg03 / 4) * 3) {
-			addOrUpdateDescription(objectiveEasterEgg03 - counter, imageRowDiv);
-		} else if (counter == 1) {
-			addOrUpdateDescription("Sigue haciendo click", imageRowDiv);
-		}
-	});
-}
-
-var objectiveEasterEgg04 = 200;
-function easterEgg04(imageRowDiv) {
-	let counter = 0;
-	let codeDisplayed = false;
-	imageRowDiv.addEventListener("click", function() {
-		counter++;
-		if (counter >= objectiveEasterEgg04) {
-			if (!codeDisplayed) {
-				addOrUpdateDescription("Nos vamos a París!", imageRowDiv);
-				updatePicture("animal_crossing_project/res/images/easter_egg_04_05.jpg", imageRowDiv)
-				codeDisplayed = true;
-			}
-		} else if (counter == 25) {
-			addOrUpdateDescription("Ya casi está!", imageRowDiv);
-			updatePicture("animal_crossing_project/res/images/easter_egg_04_01.jpg", imageRowDiv)
-		} else if (counter == 50) {
-			addOrUpdateDescription("Un poco más...", imageRowDiv);
-			updatePicture("animal_crossing_project/res/images/easter_egg_04_02.jpg", imageRowDiv)
-		} else if (counter == 75) {
-			addOrUpdateDescription("Este es un pelín más complicao", imageRowDiv);
-		} else if (counter == 100) {
-			addOrUpdateDescription("UwU", imageRowDiv);
-			updatePicture("animal_crossing_project/res/images/easter_egg_04_03.jpg", imageRowDiv)
-		} else if (counter == 125) {
-			addOrUpdateDescription("UwUn poco más", imageRowDiv);
-			updatePicture("animal_crossing_project/res/images/easter_egg_04_04.jpg", imageRowDiv)
-		} else if (counter > 150) {
-			addOrUpdateDescription(objectiveEasterEgg04 - counter, imageRowDiv);
-		} else if (counter == 1) {
-			addOrUpdateDescription("Sigue haciendo click", imageRowDiv);
 		}
 	});
 }
