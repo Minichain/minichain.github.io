@@ -68,7 +68,7 @@
         width: 100%;
     }
 
-	.divTop, .topIcons {
+	.divTop, .topIcons, .bottomIcons {
         width: 100%;
     }
 }
