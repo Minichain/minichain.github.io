@@ -3,6 +3,46 @@
     white-space: pre;
     tab-size: 4;
     overflow-x: auto;
+    /* Leave room so the end of the song isn't hidden behind the player controls */
+    padding-bottom: 120px;
+}
+
+.playerControls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 25px;
+    z-index: 10;
+}
+
+.playerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s, background-color .2s;
+}
+
+.playerButton:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+.playerButton svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
 }
 
 .songList {

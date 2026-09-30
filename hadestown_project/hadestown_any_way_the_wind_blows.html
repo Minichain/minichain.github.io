@@ -17,12 +17,13 @@
 	<link rel="stylesheet" href="../shared/styles/styles.css">
 	<link rel="stylesheet" href="../shared/styles/inner_project_styles.css">
 	<link rel="stylesheet" href="styles/styles.css">
+	<script src="src/main.js"></script>
 	<link rel="icon" type="image/png" href="../shared/res/icons/favicon_01.png" />
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
 	<title>Any Way the Wind Blows</title>
 </head>
 
-<body class="myBody">
+<body class="myBody" onload="onLoad()" data-song-duration="225">
 	<div class="bottomIcons">
 		<div class="backIconContainer">
 			<a href="../hadestown_project.html">
@@ -189,6 +190,15 @@ And that is where he stayed
 Until one day…</p>
 			</div>
 		</div>
+	</div>
+
+	<div class="playerControls">
+		<button class="playerButton" id="goToStartButton" title="Go to the start">
+			<svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+		</button>
+		<button class="playerButton" id="playButton" title="Play">
+			<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+		</button>
 	</div>
 </body>
 
