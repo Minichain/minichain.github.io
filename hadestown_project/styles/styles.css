@@ -7,6 +7,22 @@
     padding-bottom: 120px;
 }
 
+/* Chords are colored by their root note. The 12 semitones are spread around the color wheel
+   in 30° steps, starting with red on A. Enharmonic notes share a color (C# = Db, Cb = B...).
+   The colors are very light so they contrast with the dark background. */
+.chordA  { color: hsl(0, 100%, 85%); }
+.chordBb { color: hsl(30, 100%, 85%); }
+.chordB  { color: hsl(60, 100%, 85%); }
+.chordC  { color: hsl(90, 100%, 85%); }
+.chordDb { color: hsl(120, 100%, 85%); }
+.chordD  { color: hsl(150, 100%, 85%); }
+.chordEb { color: hsl(180, 100%, 85%); }
+.chordE  { color: hsl(210, 100%, 85%); }
+.chordF  { color: hsl(240, 100%, 85%); }
+.chordGb { color: hsl(270, 100%, 85%); }
+.chordG  { color: hsl(300, 100%, 85%); }
+.chordAb { color: hsl(330, 100%, 85%); }
+
 .songHeader {
     display: flex;
     align-items: center;
