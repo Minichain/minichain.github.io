@@ -1,3 +1,8 @@
+.songBpm {
+    margin-top: -10px;
+    opacity: 0.7;
+}
+
 .songLyrics {
     font-family: 'Courier New', monospace;
     white-space: pre;
