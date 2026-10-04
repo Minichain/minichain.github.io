@@ -26,6 +26,7 @@ function onLoad() {
     document.getElementById("goToStartButton").addEventListener("click", goToStart);
     document.getElementById("rewindButton").addEventListener("click", function () { skip(-SKIP_SECONDS); });
     document.getElementById("forwardButton").addEventListener("click", function () { skip(SKIP_SECONDS); });
+    setUpMetronome();
 }
 
 function togglePlay() {
@@ -144,4 +145,89 @@ function goToStart() {
         animationFrameId = null;
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Metronome: plays a click on every beat at the BPM shown under the song title.
+// The clicks are generated with the Web Audio API, so no sound file is needed.
+// To keep the beat exact, the clicks are scheduled ahead on the audio clock instead of
+// being played from a timer, which can fire late when the page is busy.
+var METRONOME_LOOKAHEAD_MS = 25;
+var METRONOME_SCHEDULE_AHEAD_SECONDS = 0.1;
+var CLICK_FREQUENCY = 1000;
+var CLICK_DURATION_SECONDS = 0.03;
+
+var audioContext = null;
+var metronomeBpm;
+var metronomeTimerId = null;
+var nextClickTime;
+
+function setUpMetronome() {
+    var bpmElement = document.querySelector(".songBpm");
+    if (bpmElement === null) {
+        return;
+    }
+    metronomeBpm = parseFloat(bpmElement.textContent.replace("BPM:", ""));
+    // Songs whose BPM is still unknown show "BPM: X" and get no button.
+    if (isNaN(metronomeBpm)) {
+        return;
+    }
+    var button = document.createElement("button");
+    button.className = "metronomeButton";
+    button.id = "metronomeButton";
+    button.innerHTML = '<svg viewBox="0 0 24 24"><path d="' + PLAY_ICON_PATH + '"/></svg>';
+    button.addEventListener("click", toggleMetronome);
+    bpmElement.appendChild(button);
+    updateMetronomeButton(false);
+}
+
+function toggleMetronome() {
+    if (metronomeTimerId === null) {
+        startMetronome();
+    } else {
+        stopMetronome();
+    }
+}
+
+function updateMetronomeButton(isOn) {
+    var button = document.getElementById("metronomeButton");
+    button.title = isOn ? "Stop metronome" : "Play metronome";
+    button.querySelector("path").setAttribute("d", isOn ? STOP_ICON_PATH : PLAY_ICON_PATH);
+}
+
+function startMetronome() {
+    // Browsers only allow audio to start after a user action, so the context is created on the first click.
+    if (audioContext === null) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    audioContext.resume();
+    nextClickTime = audioContext.currentTime + 0.05;
+    scheduleClicks();
+    metronomeTimerId = setInterval(scheduleClicks, METRONOME_LOOKAHEAD_MS);
+    updateMetronomeButton(true);
+}
+
+function stopMetronome() {
+    clearInterval(metronomeTimerId);
+    metronomeTimerId = null;
+    updateMetronomeButton(false);
+}
+
+function scheduleClicks() {
+    while (nextClickTime < audioContext.currentTime + METRONOME_SCHEDULE_AHEAD_SECONDS) {
+        playClick(nextClickTime);
+        nextClickTime += 60 / metronomeBpm;
+    }
+}
+
+// A short beep that fades out quickly, so it sounds like a click.
+function playClick(time) {
+    var oscillator = audioContext.createOscillator();
+    var gain = audioContext.createGain();
+    oscillator.frequency.value = CLICK_FREQUENCY;
+    gain.gain.setValueAtTime(1, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + CLICK_DURATION_SECONDS);
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start(time);
+    oscillator.stop(time + CLICK_DURATION_SECONDS);
 }
