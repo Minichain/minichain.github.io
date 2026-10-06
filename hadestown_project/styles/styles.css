@@ -160,6 +160,29 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
+.songSection {
+    width: 400px;
+    max-width: 90%;
+    margin: 20px 0 0 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    color: var(--section-color, rgba(255, 255, 255, 0.8));
+    border-bottom: 1px solid var(--section-color, rgba(255, 255, 255, 0.3));
+    padding-bottom: 8px;
+}
+
+.songSection:first-child {
+    margin-top: 0;
+}
+
+/* One soft color per section, light enough to stand out on the dark background. */
+.sectionIntro     { --section-color: hsl(45, 85%, 75%); }  /* Lamplight gold: the story begins */
+.sectionUpbeat    { --section-color: hsl(20, 90%, 78%); }  /* Warm coral: lively, sunny */
+.sectionDarkness  { --section-color: hsl(270, 55%, 78%); } /* Dusky violet: night falling */
+.sectionSadness   { --section-color: hsl(210, 65%, 78%); } /* Pale blue: melancholy */
+.sectionClimax    { --section-color: hsl(350, 80%, 78%); } /* Soft rose red: emotional peak */
+
 .songListTotal {
     margin-top: 25px;
     text-align: center;
