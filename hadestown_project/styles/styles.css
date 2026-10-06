@@ -61,29 +61,14 @@
 .chordG  { color: hsl(300, 100%, 85%); }
 .chordAb { color: hsl(330, 100%, 85%); }
 
-.songHeader {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    width: 1000px;
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 5%;
-    padding-left: calc(10% - 25px);
-    box-sizing: border-box;
-}
-
-.songHeader .backIconContainer {
-    position: static;
-    flex-shrink: 0;
-}
-
 .spotifyEmbeds {
     display: flex;
     flex-direction: column;
     gap: 10px;
     flex-grow: 1;
     max-width: 500px;
+    /* Offsets the negative margin-top of .songLength so it doesn't overlap the embeds */
+    margin-bottom: 30px;
 }
 
 .spotifyEmbed {
@@ -172,6 +157,12 @@
     padding-bottom: 8px;
 }
 
+.songSectionLength {
+    margin-left: 8px;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
 .songSection:first-child {
     margin-top: 0;
 }
@@ -203,7 +194,7 @@ a.songButton:hover {
 }
 
 @media (max-width:1000px) {
-    .topIcons, .project, .bottomIcons, .projectDescription, .songHeader {
+    .topIcons, .project, .bottomIcons, .projectDescription {
         width: 100%;
     }
 }
