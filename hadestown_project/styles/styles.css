@@ -218,3 +218,125 @@ a.songButton:hover {
     border: 1px solid hsla(45, 100%, 70%, 0.6);
     border-radius: 6px;
 }
+
+/* Light/dark mode toggle, fixed at the top right corner */
+.themeButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color .2s, transform .2s;
+}
+
+.themeButton:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.1);
+}
+
+.themeButton svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Light mode: white background with black text. The "lightMode" class is set on <html> by theme.js. */
+.lightMode .myBody {
+    color: black;
+    background-color: white;
+    background-image: none;
+}
+
+/* The icons are white images, so they are inverted to black */
+.lightMode .backIcon,
+.lightMode .githubIcon, .lightMode .linkedinIcon, .lightMode .instagramIcon,
+.lightMode .twitterIcon, .lightMode .myProjectsIcon {
+    filter: invert(1);
+}
+
+.lightMode .githubIconText, .lightMode .linkedinIconText, .lightMode .instagramIconText,
+.lightMode .twitterIconText, .lightMode .myProjectsIconText {
+    color: black;
+}
+
+.lightMode .songLength, .lightMode .songBpm {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.lightMode .themeButton, .lightMode .metronomeButton, .lightMode .playerButton {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.lightMode .playerButton {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lightMode .themeButton:hover, .lightMode .metronomeButton:hover, .lightMode .playerButton:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.lightMode .playerButton:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.lightMode .songButton,
+.lightMode a.songButton:link, .lightMode a.songButton:visited, .lightMode a.songButton:hover {
+    color: black;
+}
+
+.lightMode .songButton {
+    background-color: white;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.lightMode a.songButton:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.lightMode .songButtonLength {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Same hues as in dark mode, but darker so they stand out on the white background */
+.lightMode .sectionIntro     { --section-color: hsl(45, 85%, 32%); }
+.lightMode .sectionUpbeat    { --section-color: hsl(20, 90%, 40%); }
+.lightMode .sectionDarkness  { --section-color: hsl(270, 55%, 40%); }
+.lightMode .sectionSadness   { --section-color: hsl(210, 65%, 38%); }
+.lightMode .sectionClimax    { --section-color: hsl(350, 80%, 40%); }
+
+/* Same hues as the dark mode chords, darkened to be readable on the white background */
+.lightMode .chordA  { color: hsl(0, 100%, 38%); }
+.lightMode .chordBb { color: hsl(30, 100%, 35%); }
+.lightMode .chordB  { color: hsl(60, 100%, 27%); }
+.lightMode .chordC  { color: hsl(90, 100%, 28%); }
+.lightMode .chordDb { color: hsl(120, 100%, 28%); }
+.lightMode .chordD  { color: hsl(150, 100%, 28%); }
+.lightMode .chordEb { color: hsl(180, 100%, 28%); }
+.lightMode .chordE  { color: hsl(210, 100%, 38%); }
+.lightMode .chordF  { color: hsl(240, 100%, 45%); }
+.lightMode .chordGb { color: hsl(270, 100%, 42%); }
+.lightMode .chordG  { color: hsl(300, 100%, 32%); }
+.lightMode .chordAb { color: hsl(330, 100%, 38%); }
+
+.lightMode .wipWarning, .lightMode .wipBadge {
+    color: hsl(40, 100%, 28%);
+    border-color: hsla(40, 100%, 35%, 0.6);
+}
+
+.lightMode .wipWarning {
+    background-color: rgba(255, 190, 0, 0.15);
+}
