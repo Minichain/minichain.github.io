@@ -8,8 +8,8 @@ class WebGLManager {
             alert('Unable to initialize Webgl. Your browser or machine may not support it.');
             return;
         }
-        this.logo = new Texture(this.gl, 'spectrum_visualizer_project/res/images/logo_def_blanco_1200px.png')
-        this.background = new Texture(this.gl, 'spectrum_visualizer_project/res/images/background_02.jpg')
+        this.logo = new Texture(this.gl, 'res/images/logo_def_blanco_1200px.png')
+        this.background = new Texture(this.gl, 'res/images/background_02.jpg')
     }
     
     clearCanvas(c) {

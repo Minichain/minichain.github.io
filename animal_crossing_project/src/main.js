@@ -118,7 +118,7 @@ function appendPicture(pictureName, pictureDescription) {
 		appendNewDate(year, month, centerColumnDiv);
 	}
 
-	picture.src = "animal_crossing_project/res/images/" + pictureName + ".jpg";
+	picture.src = "res/images/" + pictureName + ".jpg";
 	imageRowDiv.appendChild(picture);
 	if (pictureDescription != "") {
 		addOrUpdateDescription(pictureDescription, imageRowDiv);
@@ -138,7 +138,7 @@ function easterEgg01(imageRowDiv) {
 		if (counter >= objectiveEasterEgg01) {
 			if (!textDisplayed) {
 				addOrUpdateDescription("House Flipper 2", imageRowDiv);
-				updatePicture("animal_crossing_project/res/images/easter_egg_01.jpg", imageRowDiv)
+				updatePicture("res/images/easter_egg_01.jpg", imageRowDiv)
 				textDisplayed = true;
 			}
 		} else if (counter > 0) {
@@ -156,7 +156,7 @@ function easterEgg02(imageRowDiv) {
 		if (counter >= objectiveEasterEgg02) {
 			if (!textDisplayed) {
 				addOrUpdateDescription("80€ en ropita o calzado", imageRowDiv);
-				updatePicture("animal_crossing_project/res/images/easter_egg_02.jpg", imageRowDiv)
+				updatePicture("res/images/easter_egg_02.jpg", imageRowDiv)
 				textDisplayed = true;
 			}
 		} else if (counter > 0) {
@@ -180,13 +180,13 @@ function setSeason(season) {
 	if (season != currentSeason) {
 		console.log("Set season to " + season);
 		if (season === "Winter") {
-			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/winter_background_01.jpg)";
+			document.body.style.backgroundImage = "url(res/images/winter_background_01.jpg)";
 		} else if (season === "Fall") {
-			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/fall_background_01.jpg)";
+			document.body.style.backgroundImage = "url(res/images/fall_background_01.jpg)";
 		} else if (season === "Summer") {
-			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/summer_background_01.jpg)";
+			document.body.style.backgroundImage = "url(res/images/summer_background_01.jpg)";
 		} else if (season === "Spring") {
-			document.body.style.backgroundImage = "url(animal_crossing_project/res/images/spring_background_01.jpg)";
+			document.body.style.backgroundImage = "url(res/images/spring_background_01.jpg)";
 		}
 		currentSeason = season;
 	}

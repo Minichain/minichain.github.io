@@ -25,7 +25,7 @@ function initScene() {
 
     loader = new PIXI.Loader();
 
-    spriteSheet = "res/images/pixi_project/player.png";
+    spriteSheet = "../res/images/pixi_project/player.png";
     loader.add(spriteSheet).load(setup);
     function setup() {
         let texture = PIXI.utils.TextureCache[spriteSheet];
@@ -38,7 +38,7 @@ function initScene() {
         app.ticker.add(delta => gameLoop(delta));
     }
 
-    // player = new Player(app, loader, "res/images/pixi_project/player.png");
+    // player = new Player(app, loader, "../res/images/pixi_project/player.png");
 }
 
 function gameLoop(delta) {

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GitHub Pages serves this page for any missing URL, at that URL, so every path here is absolute. -->
+    <script>
+    // The project pages used to live at the root as "<name>.html" and now live in "<name>/index.html".
+    // Old links (bookmarks, search results...) are redirected to the new location.
+    var MOVED_PAGES = [
+        "projects",
+        "hadestown_project",
+        "elwynn_project",
+        "minichains_player_project",
+        "babylon_demo_project",
+        "webgl_demo_project",
+        "animal_crossing_project",
+        "spectrum_visualizer_project",
+        "pixi_demo_project"
+    ];
+    var match = window.location.pathname.match(/^\/([^\/]+)\.html$/);
+    if (match && MOVED_PAGES.indexOf(match[1]) !== -1) {
+        window.location.replace("/" + match[1] + "/" + window.location.search + window.location.hash);
+    }
+    </script>
+    <link rel="stylesheet" href="/shared/styles/styles.css">
+    <link rel="icon" type="image/png" href="/shared/res/icons/favicon_01.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <title>Page not found</title>
+</head>
+
+<body class="myBody" style="text-align: center; padding-top: 20vh;">
+    <h1>Page not found</h1>
+    <p><a href="/">Go to the home page</a></p>
+</body>
+
+</html>

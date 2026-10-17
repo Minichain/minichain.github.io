@@ -14,15 +14,15 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="shared/styles/styles.css">
-    <link rel="stylesheet" href="shared/styles/inner_project_styles.css">
-    <link rel="stylesheet" href="minichains_player_project/styles/styles.css">
+    <link rel="stylesheet" href="../shared/styles/styles.css">
+    <link rel="stylesheet" href="../shared/styles/inner_project_styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap">
-    <link rel="icon" type="image/png" href="shared/res/icons/favicon_01.png" />
-    <title>Minichain's Player</title>
+    <link rel="icon" type="image/png" href="../shared/res/icons/favicon_01.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <title>Elwynn Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="minichains_player_project/src/main.js"></script>
+    <script src="src/main.js"></script>
 </head>
 
 <body class="myBody" onresize="onResize()" onload="onLoad()">
@@ -31,31 +31,31 @@
             <div class="githubIconContainer">
                 <a href="https://github.com/Minichain" target="_blank">
                     <div class="githubIconText">Github</div>
-                    <img class="githubIcon" src="shared/res/icons/github_icon_white_100x100.png"></img>
+                    <img class="githubIcon" src="../shared/res/icons/github_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="linkedinIconContainer">
                 <a href="https://linkedin.com/in/adria-cadena-rubio" target="_blank">
                     <div class="linkedinIconText">Linkedin</div>
-                    <img class="linkedinIcon" src="shared/res/icons/linkedin_icon_white_100x100.png"></img>
+                    <img class="linkedinIcon" src="../shared/res/icons/linkedin_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="myProjectsIconContainer">
-                <a href="projects.html">
+                <a href="../projects/index.html">
                     <div class="myProjectsIconText">Projects</div>
-                    <img class="myProjectsIcon" src="shared/res/icons/dashboard_icon_white_100x100.png"></img>
+                    <img class="myProjectsIcon" src="../shared/res/icons/dashboard_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="instagramIconContainer">
                 <a href="https://www.instagram.com/itsminichain" target="_blank">
                     <div class="instagramIconText">Instagram</div>
-                    <img class="instagramIcon" src="shared/res/icons/instagram_icon_white_100x100.png"></img>
+                    <img class="instagramIcon" src="../shared/res/icons/instagram_icon_white_100x100.png"></img>
                 </a>
             </div>
             <div class="twitterIconContainer">
                 <a href="https://twitter.com/ItsMinichain" target="_blank">
                     <div class="twitterIconText">Twitter</div>
-                    <img class="twitterIcon" src="shared/res/icons/twitter_icon_white_100x100.png"></img>
+                    <img class="twitterIcon" src="../shared/res/icons/twitter_icon_white_100x100.png"></img>
                 </a>
             </div>
         </div>
@@ -66,24 +66,45 @@
             <div class="projectDescriptionInnerDiv">
                 <div class="titleRow">
                     <div class="backIconContainer">
-                        <a href="projects.html">
-                            <img class="backIcon" src="shared/res/icons/back_icon_white_100x100.png"></img>
+                        <a href="../projects/index.html">
+                            <img class="backIcon" src="../shared/res/icons/back_icon_white_100x100.png"></img>
                         </a>
                     </div>
-                    <h1>Minichain's Player</h1>
+                    <h1>Elwynn Project</h1>
                 </div>
-                <p>MinichainsPlayer is, for now, a very simple Music Player developed in Kotlin capable of playing MP3 files stored in your device.</p>
+                <p>Game Engine written in Java.</p>
                 <br>
+                <p>Tools used in this project:</p>
                 <h2>
-                    Screenshots
+                    <a href="https://www.lwjgl.org/">LWJGL</a> (Lightweight Java Game Library):
                 </h2>
-                <img class="minichainsPlayerImage" src="minichains_player_project/res/images/screenshot_01.png" alt="Minichain's Player Image">
+                <p>
+                    LWJGL is a java library that includes APIs such as OpenGL and OpenAL in order to render graphics and audio in real-time.
+                </p>
+                <h2>
+                    <a href="https://github.com/xerial/sqlite-jdbc">SQLite JDBC:</a>
+                </h2>
+                <p>SQLite JDBC is a library for accessing and creating SQLite database files in Java.</p>
+                <h2>
+                    Assets:
+                </h2>
+                <p>
+                    All the assets (sprites and sounds) have been designed and recorded by me.
+                </p>
+                <h2>
+                    Video Demo:
+                </h2>
             </div>
+        </div>
+
+        <div class="projectDemo">
+            <iframe class="projectVideo" src="https://www.youtube.com/embed/jBmSVZri8L4">
+            </iframe>
         </div>
 
         <div class="projectDownloads">
             <div class="projectDownloadsInnerDiv">
-                <a href="https://drive.google.com/drive/folders/10KyrqIDndmg9OG2f7F3hEFRlLv14OL0Z?usp=sharing" target="_blank">
+                <a href="https://drive.google.com/drive/folders/1ouFLMoRi2XZKDLciLRhzkJsJ3ALuE3bf?usp=sharing" target="_blank">
                     <button class="projectDownloadButton"><i class="fa fa-download"></i> Download</button>
                 </a>
             </div>
@@ -99,8 +120,8 @@
 
     <div class="bottomIcons">
         <div class="backIconContainer">
-            <a href="projects.html">
-                <img class="backIcon" src="shared/res/icons/back_icon_white_100x100.png"></img>
+            <a href="../projects/index.html">
+                <img class="backIcon" src="../shared/res/icons/back_icon_white_100x100.png"></img>
             </a>
         </div>
     </div>

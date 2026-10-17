@@ -26,9 +26,12 @@
 <body class="myBody">
     <div class="bannerAndPortrait">
         <img class="bannerImage" src="index/res/images/banner_(1584x396).png"></img>
-        <!-- <img class="portraitImage" src="index/res/images/minichain_profile_picture.png"></img> -->
-        <video class="portraitImage" loop="loop" webkit-playsinline="true" muted="" autoplay="">
+        <!-- The poster is shown while the video loads, or instead of it when the browser blocks autoplay
+             (iOS Low Power Mode, battery/data saver...). The <img> is for browsers that can't play the video. -->
+        <video class="portraitImage" id="portraitVideo" poster="index/res/images/minichain_profile_picture.png"
+               loop muted autoplay playsinline webkit-playsinline preload="auto">
             <source src="index/res/images/minichain_profile_picture.mp4" type="video/mp4">
+            <img class="portraitImage" src="index/res/images/minichain_profile_picture.png"></img>
         </video>
     </div>
 
@@ -51,7 +54,7 @@
             </a>
         </div>
         <div class="myProjectsIconContainer">
-            <a href="projects.html">
+            <a href="projects/index.html">
                 <div class="myProjectsIconText">Projects</div>
                 <img class="myProjectsIcon" src="shared/res/icons/dashboard_icon_white_100x100.png"></img>
             </a>
