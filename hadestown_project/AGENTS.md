@@ -19,19 +19,19 @@ and have a built-in metronome.
 
 ## Setlist
 
-| Section           | Song                              | File                                                | Length | BPM |
-|-------------------|-----------------------------------|-----------------------------------------------------|--------|-----|
-| Intro             | Road to Hell                      | `hadestown_road_to_hell.html`                       | 5:17   | 95  |
-| Upbeat Core       | Livin' it Up on Top               | `hadestown_livin_it_up_on_top.html`                 | 5:29   | 98  |
-| Upbeat Core       | Any Way the Wind Blows            | `hadestown_any_way_the_wind_blows.html`             | 3:45   | 105 |
-| Upbeat Core       | Come Home With Me & Wedding Song  | `hadestown_come_home_with_me_and_wedding_song.html` | 5:20   | 95  |
-| Shift to Darkness | All I've Ever Known               | `hadestown_all_ive_ever_known.html`                 | 4:03   | 120 |
-| Shift to Darkness | Way Down Hadestown                | `hadestown_way_down_hadestown.html`                 | 5:00   | 185 |
-| Shift to Darkness | Our Lady of the Underground       | `hadestown_our_lady_of_the_underground.html`        | 5:24   | 135 |
-| Sadness           | Flowers                           | `hadestown_flowers.html`                            | 3:31   | 85  |
-| Sadness           | If It's True                      | `hadestown_if_its_true.html`                        | 4:13   | 115 |
-| Climax            | Epic II                           | `hadestown_epic_ii.html`                            | 2:26   | 85  |
-| Climax            | Wait for Me (Reprise)             | `hadestown_wait_for_me_reprise.html`                | 3:12   | 92  |
+| #  | Section           | Song                              | File                                                | Length | BPM |
+|----|-------------------|-----------------------------------|-----------------------------------------------------|--------|-----|
+| 1  | Intro             | Road to Hell                      | `hadestown_road_to_hell.html`                       | 5:17   | 95  |
+| 2  | Upbeat Core       | Livin' it Up on Top               | `hadestown_livin_it_up_on_top.html`                 | 5:29   | 98  |
+| 3  | Upbeat Core       | Any Way the Wind Blows            | `hadestown_any_way_the_wind_blows.html`             | 3:45   | 105 |
+| 4  | Upbeat Core       | Come Home With Me & Wedding Song  | `hadestown_come_home_with_me_and_wedding_song.html` | 5:20   | 95  |
+| 5  | Shift to Darkness | All I've Ever Known               | `hadestown_all_ive_ever_known.html`                 | 4:03   | 120 |
+| 6  | Shift to Darkness | Way Down Hadestown                | `hadestown_way_down_hadestown.html`                 | 5:00   | 185 |
+| 7  | Shift to Darkness | Our Lady of the Underground       | `hadestown_our_lady_of_the_underground.html`        | 5:24   | 135 |
+| 8  | Sadness           | Flowers                           | `hadestown_flowers.html`                            | 3:31   | 85  |
+| 9  | Sadness           | If It's True                      | `hadestown_if_its_true.html`                        | 4:13   | 115 |
+| 10 | Climax            | Epic II                           | `hadestown_epic_ii.html`                            | 2:26   | 85  |
+| 11 | Climax            | Wait for Me (Reprise)             | `hadestown_wait_for_me_reprise.html`                | 3:12   | 92  |
 
 Section lengths: Intro 5:17, Upbeat Core 14:34, Shift to Darkness 14:27, Sadness 7:44,
 Climax 5:38. Total: 47:40.
@@ -88,6 +88,13 @@ or a song is added, removed or moved, update all of them:
    and `<h1>`), Spotify track id, length, BPM and chords/lyrics.
 2. Add an `<a class="songButton">` to the right section in `index.html`.
 3. Update the section and total lengths (see above) and the setlist table in this file.
+4. Renumber the songs (see below).
+
+## Song numbers
+
+Every song in `index.html` starts with its position in the setlist (`1. Road to Hell`), counting
+across sections. When a song is added, removed or moved, renumber all the songs in `index.html` and
+in the setlist table in this file.
 
 ## Other details
 
