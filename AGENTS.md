@@ -24,3 +24,4 @@ Each page folder usually contains `src/` (scripts), `styles/` and `res/` (images
 - `spectrum_visualizer_project/`
 - `webgl_demo_project/`
 - `what_to_do_project/`
+- `wow_forever_project/`
