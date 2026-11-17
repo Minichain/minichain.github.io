@@ -25,6 +25,82 @@
     transform: scale(1.05);
 }
 
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightboxImage {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
+}
+
+.lightboxButton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0 0 6px 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 44px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.lightboxButton:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.lightboxPrev {
+    left: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightboxNext {
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightboxClose {
+    top: 2vh;
+    right: 2vw;
+    width: 44px;
+    height: 44px;
+    font-size: 32px;
+    padding: 0 0 4px 0;
+}
+
+.lightboxCounter {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    text-shadow: 0 0 6px black;
+}
+
 @media (max-width: 1024px) {
     .topIcons, .projectDescription, .bottomIcons {
         width: 100%;
