@@ -27,14 +27,14 @@ and have a built-in metronome.
 | 4  | Upbeat Core       | Come Home With Me & Wedding Song  | `hadestown_come_home_with_me_and_wedding_song.html` | 5:20   | 95  |
 | 5  | Shift to Darkness | All I've Ever Known               | `hadestown_all_ive_ever_known.html`                 | 4:03   | 120 |
 | 6  | Shift to Darkness | Way Down Hadestown                | `hadestown_way_down_hadestown.html`                 | 5:00   | 185 |
-| 7  | Shift to Darkness | Our Lady of the Underground       | `hadestown_our_lady_of_the_underground.html`        | 5:24   | 135 |
-| 8  | Sadness           | Flowers                           | `hadestown_flowers.html`                            | 3:31   | 85  |
-| 9  | Sadness           | If It's True                      | `hadestown_if_its_true.html`                        | 4:13   | 115 |
-| 10 | Climax            | Epic II                           | `hadestown_epic_ii.html`                            | 2:26   | 85  |
+| 7  | Shift to Darkness | Flowers                           | `hadestown_flowers.html`                            | 3:31   | 85  |
+| 8  | Shift to Darkness | Epic II                           | `hadestown_epic_ii.html`                            | 2:26   | 85  |
+| 9  | Shift to Darkness | Our Lady of the Underground       | `hadestown_our_lady_of_the_underground.html`        | 5:24   | 135 |
+| 10 | Climax            | If It's True                      | `hadestown_if_its_true.html`                        | 4:13   | 115 |
 | 11 | Climax            | Wait for Me (Reprise)             | `hadestown_wait_for_me_reprise.html`                | 3:12   | 92  |
 
-Section lengths: Intro 5:17, Upbeat Core 14:34, Shift to Darkness 14:27, Sadness 7:44,
-Climax 5:38. Total: 47:40.
+Section lengths: Intro 5:17, Upbeat Core 14:34, Shift to Darkness 20:24, Climax 7:25.
+Total: 47:40.
 
 "Come Home With Me & Wedding Song" is a medley of two tracks, so its page has two Spotify embeds.
 
@@ -99,7 +99,7 @@ in the setlist table in this file.
 ## Other details
 
 - Sections in the setlist are `<h2 class="songSection sectionXxx">`, each with its own color
-  (`sectionIntro`, `sectionUpbeat`, `sectionDarkness`, `sectionSadness`, `sectionClimax`).
+  (`sectionIntro`, `sectionUpbeat`, `sectionDarkness`, `sectionClimax`).
 - `.wipWarning` (a box on a song page) and `.wipBadge` (a tag next to a song in the setlist) mark
   songs whose chords are still being reviewed. No song uses them right now.
 - Any new UI must work in both dark mode (default) and light mode (`.lightMode` on `<html>`).

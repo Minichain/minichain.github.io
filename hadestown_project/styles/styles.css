@@ -171,7 +171,6 @@
 .sectionIntro     { --section-color: hsl(45, 85%, 75%); }  /* Lamplight gold: the story begins */
 .sectionUpbeat    { --section-color: hsl(20, 90%, 78%); }  /* Warm coral: lively, sunny */
 .sectionDarkness  { --section-color: hsl(270, 55%, 78%); } /* Dusky violet: night falling */
-.sectionSadness   { --section-color: hsl(210, 65%, 78%); } /* Pale blue: melancholy */
 .sectionClimax    { --section-color: hsl(350, 80%, 78%); } /* Soft rose red: emotional peak */
 
 .songListTotal {
@@ -315,7 +314,6 @@ a.songButton:hover {
 .lightMode .sectionIntro     { --section-color: hsl(45, 85%, 32%); }
 .lightMode .sectionUpbeat    { --section-color: hsl(20, 90%, 40%); }
 .lightMode .sectionDarkness  { --section-color: hsl(270, 55%, 40%); }
-.lightMode .sectionSadness   { --section-color: hsl(210, 65%, 38%); }
 .lightMode .sectionClimax    { --section-color: hsl(350, 80%, 40%); }
 
 /* Same hues as the dark mode chords, darkened to be readable on the white background */
